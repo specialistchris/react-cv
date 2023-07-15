@@ -69,7 +69,7 @@ export type SectionId = typeof SectionId[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `The Chris Napier.`,
+  name: `Chris Napier`,
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
@@ -103,16 +103,16 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: `More than 10 years of project management in various industries. I started in 
+  information technology and engineering, then added MBA degree and find myself now in Swiss Banking.
+  I am skilled at working in business and technical domains and bridging the gaps between them.`,
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
+    {label: 'Location', text: 'Swtizerland', Icon: MapIcon},
+    {label: 'Age', text: '39', Icon: CalendarIcon},
+    {label: 'Nationality', text: 'NZ / US / CH', Icon: FlagIcon},
+    {label: 'Interests', text: 'Karate, Cats, ', Icon: SparklesIcon},
+    {label: 'Study', text: 'Victoria University, St Gallen Univeristy', Icon: AcademicCapIcon},
+    {label: 'Employment', text: 'A swiss bank.', Icon: BuildingOffice2Icon},
   ],
 };
 
