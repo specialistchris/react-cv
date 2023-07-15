@@ -44,8 +44,8 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'React Resume Template',
-  description: "Example site built with Tim Baker's react resume template",
+  title: 'Chris Napier',
+  description: "React me up",
 };
 
 /**
@@ -69,7 +69,7 @@ export type SectionId = typeof SectionId[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `Chris Napier`,
+  name: `Christopher Napier`,
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
@@ -111,7 +111,7 @@ export const aboutData: About = {
     {label: 'Nationality', text: 'NZ / US / CH', Icon: FlagIcon},
     {label: 'Interests', text: 'Karate, Cats, ', Icon: SparklesIcon},
     {label: 'Study', text: 'Victoria University, St Gallen Univeristy', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'A swiss bank.', Icon: BuildingOffice2Icon},
+    {label: 'Employment', text: 'A swiss bank', Icon: BuildingOffice2Icon},
   ],
 };
 
@@ -127,25 +127,33 @@ export const skills: SkillGroup[] = [
         level: 10,
       },
       {
-        name: 'French',
-        level: 4,
+        name: 'German',
+        level: 8,
       },
       {
-        name: 'Spanish',
-        level: 3,
+        name: 'Portuguese',
+        level: 5,
+      },
+      {
+        name: 'Japanese',
+        level: 2,
       },
     ],
   },
   {
-    name: 'Frontend development',
+    name: 'Project Management',
     skills: [
       {
-        name: 'React',
+        name: 'Agile',
         level: 9,
       },
       {
-        name: 'Typescript',
+        name: 'Waterfall',
         level: 7,
+      },
+      {
+        name: 'Hybrid',
+        level: 6,
       },
       {
         name: 'GraphQL',
@@ -154,7 +162,7 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
-    name: 'Backend development',
+    name: 'Toolset',
     skills: [
       {
         name: 'Node.js',
@@ -168,21 +176,29 @@ export const skills: SkillGroup[] = [
         name: 'Golang',
         level: 4,
       },
+      {
+        name: 'Circular Saw',
+        level: 4,
+      },
     ],
   },
   {
-    name: 'Mobile development',
+    name: 'Programming Skills',
     skills: [
       {
-        name: 'React Native',
-        level: 9,
+        name: 'React',
+        level: 3,
       },
       {
-        name: 'Flutter',
+        name: 'SQL',
         level: 4,
       },
       {
-        name: 'Swift',
+        name: 'HTML',
+        level: 3,
+      },
+      {
+        name: 'C++',
         level: 3,
       },
     ],
