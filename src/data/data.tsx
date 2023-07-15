@@ -282,16 +282,16 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: '2006',
+    location: 'Victoria University of Wellington',
+    title: 'Bachelor of Information Technology',
+    content: <p>Graduated with first class honours majoring in Computer Systems Engineering</p>,
   },
   {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: '2012',
+    location: 'University of St. Gallen',
+    title: 'Masters of Business and Administration',
+    content: <p>Majored in Entrepreneurship and Project Management</p>,
   },
 ];
 
