@@ -78,8 +78,7 @@ export const heroData: Hero = {
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         I dont have free time, I have a <strong className="text-stone-100">family</strong>,
-        but somethimes I like to 
-        <strong className="text-stone-100">kaizen</strong>.
+        but somethimes I like to <strong className="text-stone-100">kaizen</strong>.
       </p>
     </>
   ),
