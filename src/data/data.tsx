@@ -323,6 +323,8 @@ export const experience: TimelineItem[] = [
 
       </p>
     ),
+  },
+  {
     date: 'January 2009 - August 2011',
     location: 'Intact Integrated Services',
     title: 'Network Engineer, Service Team Leader',
@@ -332,6 +334,8 @@ export const experience: TimelineItem[] = [
         Team leader for the Support Service Desk
       </p>
     ),
+  },
+  {
     date: 'August 2006 - September 2008',
     location: 'Harmonic Limited',
     title: 'Technology Analyst',
