@@ -297,24 +297,49 @@ export const education: TimelineItem[] = [
 
 export const experience: TimelineItem[] = [
   {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
+    date: 'January 2018 - Present',
+    location: 'Swiss Bank',
+    title: 'Project Manager',
     content: (
       <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
+        IT Program management for apps and other developments in the Digital Offering Program
+        Client technical integration management for an enterprise platform solution
+        Agile Product Owner working with JIRA, Confluence and ADO
+        Facilitating between product management, UX, sales and development teams
+        Providing regular status updates to clients and stakeholders
       </p>
     ),
   },
   {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
+    date: 'August 2012 - October 2017',
+    location: 'Hexagon Manufacturing Intelligence',
+    title: 'Project Manager',
     content: (
       <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
+        Managed an integrated robotic automation project with a budget of €15M
+        Coordinated between multiple international teams with a total of over 30 employees working in a matrix organization
+        Reported progress regularly to a Steering Committee and other stakeholders
+        Introduced Agile processes and methodology to the development teams
+
+      </p>
+    ),
+    date: 'January 2009 - August 2011',
+    location: 'Intact Integrated Services',
+    title: 'Network Engineer, Service Team Leader',
+    content: (
+      <p>
+        Cisco Certified Network Professional (CCNP)
+        Team leader for the Support Service Desk
+      </p>
+    ),
+    date: 'August 2006 - September 2008',
+    location: 'Harmonic Limited',
+    title: 'Technology Analyst',
+    content: (
+      <p>
+        Project management and technical responsibilities in ICT projects
+        Brought together subject experts, government and business industry leaders
+
       </p>
     ),
   },
@@ -327,14 +352,14 @@ export const testimonial: TestimonialSection = {
   imageSrc: testimonialImage,
   testimonials: [
     {
-      name: 'John Doe',
-      text: 'Use this as an opportunity to promote what it is like to work with you. High value testimonials include ones from current or past co-workers, managers, or from happy clients.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/169.jpg',
+      name: 'Albert Einstein',
+      text: 'A human being is part of the whole called by us universe, a part limited in time and space. He experiences himself, his thoughts and feelings as something separated from the rest - a kind of optical delusion of his consciousness. This delusion is a kind of prison for us, restricting us to our personal desires and to affection.',
+      image: 'https://www.jtg.sjrdesign.net/media/people_einstein.jpg',
     },
     {
-      name: 'Jane Doe',
-      text: 'Here you should write some nice things that someone has said about you. Encourage them to be specific and include important details (notes about a project you were on together, impressive quality produced, etc).',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg',
+      name: 'Charles Darwin',
+      text: 'In the struggle for survival, the fittest win out at the expense of their rivals because they succeed in adapting themselves best to their environment.',
+      image: 'http://descubriendogalapagos.ec/wp-content/uploads/2013/07/darwin-182x182.png',
     },
     {
       name: 'Someone else',
