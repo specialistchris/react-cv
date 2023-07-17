@@ -84,7 +84,7 @@ export const heroData: Hero = {
   ),
   actions: [
     {
-      href: '/assets/resume.pdf',
+      href: '/data/NapierChristopher-CVen.pdf',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
@@ -106,10 +106,10 @@ export const aboutData: About = {
   information technology and engineering, then added MBA degree and find myself now in Swiss Banking.
   I am skilled at working in business and technical domains and bridging the gaps between them.`,
   aboutItems: [
-    {label: 'Location', text: 'Swtizerland', Icon: MapIcon},
+    {label: 'Location', text: 'Switzerland', Icon: MapIcon},
     {label: 'Age', text: '39', Icon: CalendarIcon},
     {label: 'Nationality', text: 'NZ / US / CH', Icon: FlagIcon},
-    {label: 'Interests', text: 'Karate, Cats, ', Icon: SparklesIcon},
+    {label: 'Interests', text: 'Karate, Cats, Reading', Icon: SparklesIcon},
     {label: 'Study', text: 'Victoria University, St Gallen Univeristy', Icon: AcademicCapIcon},
     {label: 'Employment', text: 'A swiss bank', Icon: BuildingOffice2Icon},
   ],
@@ -282,16 +282,16 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
+    date: '2006',
+    location: 'Victoria University of Wellington',
+    title: 'Bachelor of Information Technology',
+    content: <p>Graduated with first class honours, majoring in Computer Systems Engineering</p>,
+  },
+  {
     date: '2012',
     location: 'University of St. Gallen',
     title: 'Masters of Business and Administration',
     content: <p>Majored in Entrepreneurship and Project Management</p>,
-  },
-  {
-    date: '2006',
-    location: 'Victoria University of Wellington',
-    title: 'Bachelor of Information Technology',
-    content: <p>Graduated with first class honours majoring in Computer Systems Engineering</p>,
   },
 ];
 
