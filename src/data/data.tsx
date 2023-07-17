@@ -26,7 +26,7 @@ import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
 import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
 import profilepic from '../images/profilepic.jpg';
-import testimonialImage from '../images/testimonial.webp';
+import quoteImage from '../images/quote.webp';
 import {
   About,
   ContactSection,
@@ -36,7 +36,7 @@ import {
   PortfolioItem,
   SkillGroup,
   Social,
-  TestimonialSection,
+  QuoteSection,
   TimelineItem,
 } from './dataDef';
 
@@ -59,7 +59,7 @@ export const SectionId = {
   Resume: 'resume',
   Skills: 'skills',
   Stats: 'stats',
-  Testimonials: 'testimonials',
+  Quotes: 'quotes',
 } as const;
 
 export type SectionId = typeof SectionId[keyof typeof SectionId];
@@ -77,8 +77,8 @@ export const heroData: Hero = {
         at <strong className="text-stone-100">a bank</strong> helping construct portfolios.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I dont have free time, I have a <strong className="text-stone-100">family</strong>,
-        but somethimes I like to <strong className="text-stone-100">kaizen</strong>.
+        I don't have free time, I have a <strong className="text-stone-100">family</strong>,
+        but sometimes I like to <strong className="text-stone-100">kaizen</strong>.
       </p>
     </>
   ),
@@ -148,16 +148,16 @@ export const skills: SkillGroup[] = [
         level: 9,
       },
       {
-        name: 'Waterfall',
+        name: 'Communication',
+        level: 9,
+      },
+      {
+        name: 'Risk Planning',
         level: 7,
       },
       {
-        name: 'Hybrid',
-        level: 6,
-      },
-      {
-        name: 'GraphQL',
-        level: 6,
+        name: 'Adaptability',
+        level: 8,
       },
     ],
   },
@@ -165,41 +165,41 @@ export const skills: SkillGroup[] = [
     name: 'Toolset',
     skills: [
       {
-        name: 'Node.js',
+        name: 'Jira',
+        level: 9,
+      },
+      {
+        name: 'Confluence',
+        level: 7,
+      },
+      {
+        name: 'Microsoft Office',
         level: 8,
       },
       {
-        name: 'Rust',
-        level: 5,
-      },
-      {
-        name: 'Golang',
-        level: 4,
-      },
-      {
-        name: 'Circular Saw',
-        level: 4,
+        name: 'Azure Dev Ops',
+        level: 6,
       },
     ],
   },
   {
-    name: 'Programming Skills',
+    name: 'Industries',
     skills: [
       {
-        name: 'React',
-        level: 3,
+        name: 'ICT',
+        level: 7,
       },
       {
-        name: 'SQL',
-        level: 4,
+        name: 'Finance',
+        level: 8,
       },
       {
-        name: 'HTML',
-        level: 3,
+        name: 'Manufacturing',
+        level: 7,
       },
       {
-        name: 'C++',
-        level: 3,
+        name: 'Automotive',
+        level: 6,
       },
     ],
   },
@@ -282,16 +282,16 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: '2006',
-    location: 'Victoria University of Wellington',
-    title: 'Bachelor of Information Technology',
-    content: <p>Graduated with first class honours majoring in Computer Systems Engineering</p>,
-  },
-  {
     date: '2012',
     location: 'University of St. Gallen',
     title: 'Masters of Business and Administration',
     content: <p>Majored in Entrepreneurship and Project Management</p>,
+  },
+  {
+    date: '2006',
+    location: 'Victoria University of Wellington',
+    title: 'Bachelor of Information Technology',
+    content: <p>Graduated with first class honours majoring in Computer Systems Engineering</p>,
   },
 ];
 
@@ -299,7 +299,7 @@ export const experience: TimelineItem[] = [
   {
     date: 'January 2018 - Present',
     location: 'Swiss Bank',
-    title: 'Project Manager',
+    title: 'Business Project Manager',
     content: (
       <p>
         IT Program management for apps and other developments in the Digital Offering Program
@@ -343,18 +343,17 @@ export const experience: TimelineItem[] = [
       <p>
         Project management and technical responsibilities in ICT projects
         Brought together subject experts, government and business industry leaders
-
       </p>
     ),
   },
 ];
 
 /**
- * Testimonial section
+ * Quote section
  */
-export const testimonial: TestimonialSection = {
-  imageSrc: testimonialImage,
-  testimonials: [
+export const quote: QuoteSection = {
+  imageSrc: quoteImage,
+  quotes: [
     {
       name: 'Albert Einstein',
       text: 'A human being is part of the whole called by us universe, a part limited in time and space. He experiences himself, his thoughts and feelings as something separated from the rest - a kind of optical delusion of his consciousness. This delusion is a kind of prison for us, restricting us to our personal desires and to affection.',
@@ -367,7 +366,7 @@ export const testimonial: TestimonialSection = {
     },
     {
       name: 'Someone else',
-      text: 'Add several of these, and keep them as fresh as possible, but be sure to focus on quality testimonials with strong highlights of your skills/work ethic.',
+      text: 'Add several of these, and keep them as fresh as possible, but be sure to focus on quality quotes with strong highlights of your skills/work ethic.',
       image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg',
     },
   ],
