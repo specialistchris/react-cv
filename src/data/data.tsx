@@ -103,8 +103,8 @@ export const heroData: Hero = {
 export const aboutData: About = {
   profileImageSrc: profilepic,
   description: `More than 10 years of project management in various industries. I started in 
-  information technology and engineering, then added MBA degree and find myself now in Swiss Banking.
-  I am skilled at working in business and technical domains and bridging the gaps between them.`,
+  information technology and engineering, then added an MBA degree and now find myself in Swiss Banking.
+  I am skilled at working at the intersection of business and technical domains and bridging the gaps between them.`,
   aboutItems: [
     {label: 'Location', text: 'Switzerland', Icon: MapIcon},
     {label: 'Age', text: '39', Icon: CalendarIcon},
