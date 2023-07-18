@@ -26,7 +26,7 @@ import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
 import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
 import profilepic from '../images/profilepic.jpg';
-import quoteImage from '../images/quote.webp';
+import testimonialImage from '../images/testimonial.webp';
 import {
   About,
   ContactSection,
@@ -36,7 +36,7 @@ import {
   PortfolioItem,
   SkillGroup,
   Social,
-  QuoteSection,
+  testimonialSection,
   TimelineItem,
 } from './dataDef';
 
@@ -59,7 +59,7 @@ export const SectionId = {
   Resume: 'resume',
   Skills: 'skills',
   Stats: 'stats',
-  Quotes: 'quotes',
+  testimonials: 'testimonials',
 } as const;
 
 export type SectionId = typeof SectionId[keyof typeof SectionId];
@@ -349,11 +349,11 @@ export const experience: TimelineItem[] = [
 ];
 
 /**
- * Quote section
+ * testimonial section
  */
-export const quote: QuoteSection = {
-  imageSrc: quoteImage,
-  quotes: [
+export const testimonial: testimonialSection = {
+  imageSrc: testimonialImage,
+  testimonials: [
     {
       name: 'Albert Einstein',
       text: 'A human being is part of the whole called by us universe, a part limited in time and space. He experiences himself, his thoughts and feelings as something separated from the rest - a kind of optical delusion of his consciousness. This delusion is a kind of prison for us, restricting us to our personal desires and to affection.',
@@ -366,7 +366,7 @@ export const quote: QuoteSection = {
     },
     {
       name: 'Someone else',
-      text: 'Add several of these, and keep them as fresh as possible, but be sure to focus on quality quotes with strong highlights of your skills/work ethic.',
+      text: 'Add several of these, and keep them as fresh as possible, but be sure to focus on quality testimonials with strong highlights of your skills/work ethic.',
       image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg',
     },
   ],
