@@ -77,8 +77,8 @@ export const heroData: Hero = {
         at <strong className="text-stone-100">a bank</strong> helping construct portfolios.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I dont have free time, I have a <strong className="text-stone-100">family</strong>,
-        but somethimes I like to <strong className="text-stone-100">kaizen</strong>.
+        I don't have free time, I have a <strong className="text-stone-100">family</strong>,
+        but sometimes I like to <strong className="text-stone-100">kaizen</strong>.
       </p>
     </>
   ),
@@ -106,7 +106,7 @@ export const aboutData: About = {
   information technology and engineering, then added MBA degree and find myself now in Swiss Banking.
   I am skilled at working in business and technical domains and bridging the gaps between them.`,
   aboutItems: [
-    {label: 'Location', text: 'Swtizerland', Icon: MapIcon},
+    {label: 'Location', text: 'Switzerland', Icon: MapIcon},
     {label: 'Age', text: '39', Icon: CalendarIcon},
     {label: 'Nationality', text: 'NZ / US / CH', Icon: FlagIcon},
     {label: 'Interests', text: 'Karate, Cats, ', Icon: SparklesIcon},
@@ -148,16 +148,16 @@ export const skills: SkillGroup[] = [
         level: 9,
       },
       {
-        name: 'Waterfall',
+        name: 'Communication',
+        level: 9,
+      },
+      {
+        name: 'Risk Planning',
         level: 7,
       },
       {
-        name: 'Hybrid',
-        level: 6,
-      },
-      {
-        name: 'GraphQL',
-        level: 6,
+        name: 'Adaptability',
+        level: 8,
       },
     ],
   },
@@ -165,41 +165,41 @@ export const skills: SkillGroup[] = [
     name: 'Toolset',
     skills: [
       {
-        name: 'Node.js',
+        name: 'Jira',
         level: 8,
       },
       {
-        name: 'Rust',
-        level: 5,
+        name: 'Confluence',
+        level: 7,
       },
       {
-        name: 'Golang',
-        level: 4,
+        name: 'Microsoft Office',
+        level: 9,
       },
       {
-        name: 'Circular Saw',
-        level: 4,
+        name: 'Azure Dev Ops',
+        level: 6,
       },
     ],
   },
   {
-    name: 'Programming Skills',
+    name: 'Industries',
     skills: [
       {
-        name: 'React',
-        level: 3,
+        name: 'ICT',
+        level: 7,
       },
       {
-        name: 'SQL',
-        level: 4,
+        name: 'Finance',
+        level: 8,
       },
       {
-        name: 'HTML',
-        level: 3,
+        name: 'Manufacturing',
+        level: 7,
       },
       {
-        name: 'C++',
-        level: 3,
+        name: 'Automotive',
+        level: 6,
       },
     ],
   },
@@ -282,16 +282,16 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: '2006',
-    location: 'Victoria University of Wellington',
-    title: 'Bachelor of Information Technology',
-    content: <p>Graduated with first class honours majoring in Computer Systems Engineering</p>,
-  },
-  {
     date: '2012',
     location: 'University of St. Gallen',
     title: 'Masters of Business and Administration',
     content: <p>Majored in Entrepreneurship and Project Management</p>,
+  },
+  {
+    date: '2006',
+    location: 'Victoria University of Wellington',
+    title: 'Bachelor of Information Technology',
+    content: <p>Graduated with first class honours majoring in Computer Systems Engineering</p>,
   },
 ];
 
@@ -299,7 +299,7 @@ export const experience: TimelineItem[] = [
   {
     date: 'January 2018 - Present',
     location: 'Swiss Bank',
-    title: 'Project Manager',
+    title: 'Business Project Manager',
     content: (
       <p>
         IT Program management for apps and other developments in the Digital Offering Program
