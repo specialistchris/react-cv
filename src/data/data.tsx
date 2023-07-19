@@ -36,7 +36,7 @@ import {
   PortfolioItem,
   SkillGroup,
   Social,
-  testimonialSection,
+  TestimonialSection,
   TimelineItem,
 } from './dataDef';
 
@@ -59,7 +59,7 @@ export const SectionId = {
   Resume: 'resume',
   Skills: 'skills',
   Stats: 'stats',
-  testimonials: 'testimonials',
+  Testimonials: 'testimonials',
 } as const;
 
 export type SectionId = typeof SectionId[keyof typeof SectionId];
@@ -77,14 +77,14 @@ export const heroData: Hero = {
         at <strong className="text-stone-100">a bank</strong> helping construct portfolios.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I don't have free time, I have a <strong className="text-stone-100">family</strong>,
-        but sometimes I like to <strong className="text-stone-100">kaizen</strong>.
+        I dont have free time, I have a <strong className="text-stone-100">family</strong>,
+        but somethimes I like to <strong className="text-stone-100">kaizen</strong>.
       </p>
     </>
   ),
   actions: [
     {
-      href: '/data/NapierChristopher-CVen.pdf',
+      href: '/assets/resume.pdf',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
@@ -103,13 +103,13 @@ export const heroData: Hero = {
 export const aboutData: About = {
   profileImageSrc: profilepic,
   description: `More than 10 years of project management in various industries. I started in 
-  information technology and engineering, then added an MBA degree and now find myself in Swiss Banking.
-  I am skilled at working at the intersection of business and technical domains and bridging the gaps between them.`,
+  information technology and engineering, then added MBA degree and find myself now in Swiss Banking.
+  I am skilled at working in business and technical domains and bridging the gaps between them.`,
   aboutItems: [
-    {label: 'Location', text: 'Switzerland', Icon: MapIcon},
+    {label: 'Location', text: 'Swtizerland', Icon: MapIcon},
     {label: 'Age', text: '39', Icon: CalendarIcon},
     {label: 'Nationality', text: 'NZ / US / CH', Icon: FlagIcon},
-    {label: 'Interests', text: 'Karate, Cats, Reading', Icon: SparklesIcon},
+    {label: 'Interests', text: 'Karate, Cats, ', Icon: SparklesIcon},
     {label: 'Study', text: 'Victoria University, St Gallen Univeristy', Icon: AcademicCapIcon},
     {label: 'Employment', text: 'A swiss bank', Icon: BuildingOffice2Icon},
   ],
@@ -148,16 +148,16 @@ export const skills: SkillGroup[] = [
         level: 9,
       },
       {
-        name: 'Communication',
-        level: 9,
-      },
-      {
-        name: 'Risk Planning',
+        name: 'Waterfall',
         level: 7,
       },
       {
-        name: 'Adaptability',
-        level: 8,
+        name: 'Hybrid',
+        level: 6,
+      },
+      {
+        name: 'GraphQL',
+        level: 6,
       },
     ],
   },
@@ -165,41 +165,41 @@ export const skills: SkillGroup[] = [
     name: 'Toolset',
     skills: [
       {
-        name: 'Jira',
-        level: 9,
-      },
-      {
-        name: 'Confluence',
-        level: 7,
-      },
-      {
-        name: 'Microsoft Office',
+        name: 'Node.js',
         level: 8,
       },
       {
-        name: 'Azure Dev Ops',
-        level: 6,
+        name: 'Rust',
+        level: 5,
+      },
+      {
+        name: 'Golang',
+        level: 4,
+      },
+      {
+        name: 'Circular Saw',
+        level: 4,
       },
     ],
   },
   {
-    name: 'Industries',
+    name: 'Programming Skills',
     skills: [
       {
-        name: 'ICT',
-        level: 7,
+        name: 'React',
+        level: 3,
       },
       {
-        name: 'Finance',
-        level: 8,
+        name: 'SQL',
+        level: 4,
       },
       {
-        name: 'Manufacturing',
-        level: 7,
+        name: 'HTML',
+        level: 3,
       },
       {
-        name: 'Automotive',
-        level: 6,
+        name: 'C++',
+        level: 3,
       },
     ],
   },
@@ -285,7 +285,7 @@ export const education: TimelineItem[] = [
     date: '2006',
     location: 'Victoria University of Wellington',
     title: 'Bachelor of Information Technology',
-    content: <p>Graduated with first class honours, majoring in Computer Systems Engineering</p>,
+    content: <p>Graduated with first class honours majoring in Computer Systems Engineering</p>,
   },
   {
     date: '2012',
@@ -299,7 +299,7 @@ export const experience: TimelineItem[] = [
   {
     date: 'January 2018 - Present',
     location: 'Swiss Bank',
-    title: 'Business Project Manager',
+    title: 'Project Manager',
     content: (
       <p>
         IT Program management for apps and other developments in the Digital Offering Program
@@ -343,15 +343,16 @@ export const experience: TimelineItem[] = [
       <p>
         Project management and technical responsibilities in ICT projects
         Brought together subject experts, government and business industry leaders
+
       </p>
     ),
   },
 ];
 
 /**
- * testimonial section
+ * Testimonial section
  */
-export const testimonial: testimonialSection = {
+export const testimonial: TestimonialSection = {
   imageSrc: testimonialImage,
   testimonials: [
     {

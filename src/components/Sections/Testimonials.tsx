@@ -3,13 +3,13 @@ import {FC, memo, UIEventHandler, useCallback, useEffect, useMemo, useRef, useSt
 
 import {isApple, isMobile} from '../../config';
 import {SectionId, testimonial} from '../../data/data';
-import {testimonial} from '../../data/dataDef';
+import {Testimonial} from '../../data/dataDef';
 import useInterval from '../../hooks/useInterval';
 import useWindow from '../../hooks/useWindow';
-import testimonialIcon from '../Icon/testimonialIcon';
+import QuoteIcon from '../Icon/QuoteIcon';
 import Section from '../Layout/Section';
 
-const testimonials: FC = memo(() => {
+const Testimonials: FC = memo(() => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [scrollValue, setScrollValue] = useState(0);
   const [parallaxEnabled, setParallaxEnabled] = useState(false);
@@ -42,7 +42,7 @@ const testimonials: FC = memo(() => {
     }
   }, [itemWidth, scrollValue]);
 
-  const settestimonial = useCallback(
+  const setTestimonial = useCallback(
     (index: number) => () => {
       if (scrollContainer !== null && scrollContainer.current !== null) {
         scrollContainer.current.scrollLeft = itemWidth.current * index;
@@ -52,11 +52,11 @@ const testimonials: FC = memo(() => {
   );
   const next = useCallback(() => {
     if (activeIndex + 1 === testimonials.length) {
-      settestimonial(0)();
+      setTestimonial(0)();
     } else {
-      settestimonial(activeIndex + 1)();
+      setTestimonial(activeIndex + 1)();
     }
-  }, [activeIndex, settestimonial, testimonials.length]);
+  }, [activeIndex, setTestimonial, testimonials.length]);
 
   const handleScroll = useCallback<UIEventHandler<HTMLDivElement>>(event => {
     setScrollValue(event.currentTarget.scrollLeft);
@@ -70,7 +70,7 @@ const testimonials: FC = memo(() => {
   }
 
   return (
-    <Section noPadding sectionId={SectionId.testimonials}>
+    <Section noPadding sectionId={SectionId.Testimonials}>
       <div
         className={classNames(
           'flex w-full items-center justify-center bg-cover bg-center px-4 py-16 md:py-24 lg:px-8',
@@ -87,7 +87,7 @@ const testimonials: FC = memo(() => {
               {testimonials.map((testimonial, index) => {
                 const isActive = index === activeIndex;
                 return (
-                  <testimonial isActive={isActive} key={`${testimonial.name}-${index}`} testimonial={testimonial} />
+                  <Testimonial isActive={isActive} key={`${testimonial.name}-${index}`} testimonial={testimonial} />
                 );
               })}
             </div>
@@ -102,7 +102,7 @@ const testimonials: FC = memo(() => {
                     )}
                     disabled={isActive}
                     key={`select-button-${index}`}
-                    onClick={settestimonial(index)}></button>
+                    onClick={setTestimonial(index)}></button>
                 );
               })}
             </div>
@@ -113,7 +113,7 @@ const testimonials: FC = memo(() => {
   );
 });
 
-const testimonial: FC<{testimonial: testimonial; isActive: boolean}> = memo(
+const Testimonial: FC<{testimonial: Testimonial; isActive: boolean}> = memo(
   ({testimonial: {text, name, image}, isActive}) => (
     <div
       className={classNames(
@@ -122,11 +122,11 @@ const testimonial: FC<{testimonial: testimonial; isActive: boolean}> = memo(
       )}>
       {image ? (
         <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
-          <testimonialIcon className="absolute -left-2 -top-2 h-4 w-4 stroke-black text-white" />
+          <QuoteIcon className="absolute -left-2 -top-2 h-4 w-4 stroke-black text-white" />
           <img className="h-full w-full rounded-full" src={image} />
         </div>
       ) : (
-        <testimonialIcon className="h-5 w-5 shrink-0 text-white sm:h-8 sm:w-8" />
+        <QuoteIcon className="h-5 w-5 shrink-0 text-white sm:h-8 sm:w-8" />
       )}
       <div className="flex flex-col gap-y-4">
         <p className="prose prose-sm font-medium italic text-white sm:prose-base">{text}</p>
@@ -136,4 +136,4 @@ const testimonial: FC<{testimonial: testimonial; isActive: boolean}> = memo(
   ),
 );
 
-export default testimonials;
+export default Testimonials;
