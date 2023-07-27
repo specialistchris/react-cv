@@ -366,9 +366,9 @@ export const testimonial: TestimonialSection = {
       image: 'http://descubriendogalapagos.ec/wp-content/uploads/2013/07/darwin-182x182.png',
     },
     {
-      name: 'Someone else',
-      text: 'Add several of these, and keep them as fresh as possible, but be sure to focus on quality testimonials with strong highlights of your skills/work ethic.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg',
+      name: 'T. E. Lawrence',
+      text: 'All men dream but not equally. Those who dream by night in the dusty recesses of their minds wake in the day to find that is was vanity. But the dreamers of the day are dangerous men, for they may act on their dreams with open eyes, to make it possible.',
+      image: 'https://www.wumingfoundation.com/images/TELawrence.jpg',
     },
   ],
 };
