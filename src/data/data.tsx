@@ -378,28 +378,28 @@ export const testimonial: TestimonialSection = {
  */
 
 export const contact: ContactSection = {
-  headerText: 'Get in touch.',
-  description: 'Here is a good spot for a message to your readers to let them know how best to reach out to you.',
+  headerText: 'Get in touch with me.',
+  description: 'Email works. Not so active on the other mediums.',
   items: [
     {
       type: ContactType.Email,
-      text: 'reachout@timbaker.me',
-      href: 'mailto:reachout@timbaker.me',
+      text: 'contact@christophernapier.com',
+      href: 'mailto:contact@christophernapier.com',
     },
     {
       type: ContactType.Location,
-      text: 'Victoria BC, Canada',
-      href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
+      text: 'Basel, Switzerland',
+      href: 'https://www.google.ch/maps/place/Basel/@47.55465,7.5532046,13z',
     },
     {
       type: ContactType.Instagram,
-      text: '@tbakerx',
-      href: 'https://www.instagram.com/tbakerx/',
+      text: '@instagram',
+      href: 'https://www.instagram.com/',
     },
     {
       type: ContactType.Github,
-      text: 'tbakerx',
-      href: 'https://github.com/tbakerx',
+      text: 'github',
+      href: 'https://github.com/',
     },
   ],
 };
@@ -408,9 +408,9 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/tbakerx/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/'},
+  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/christophernapier/'},
+  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/'},
+  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/'},
 ];
