@@ -12,8 +12,9 @@
   # This sample publishes the directory located at the absolute 
   # path "root/project/build-output"
 
-  command = "cp -r ./src/data ./build && npm run build"
-  publish = "build"
+  #command = "cp -r ./src/data ./build && npm run build"
+  command = "cp -r ./src/data ./ && npm run build"
+  #publish = "build"
 
   # Default build command.
   #command = "echo 'default context'"
