@@ -1,6 +1,6 @@
 # Settings in the [build] context are global and are applied to
 # all contexts unless otherwise overridden by more specific contexts.
-#[build]
+[build]
   # Directory where the build system installs dependencies
   # and runs your build. Store your package.json, .nvmrc, etc here.
   # If not set, defaults to the root directory.
@@ -12,7 +12,8 @@
   # This sample publishes the directory located at the absolute 
   # path "root/project/build-output"
 
-  #publish = "build-output/"
+  command = "cp -r ./data ./build && npm run build"
+  publish = "build"
 
   # Default build command.
   #command = "echo 'default context'"
