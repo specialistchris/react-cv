@@ -85,7 +85,7 @@ export const heroData: Hero = {
   ),
   actions: [
     {
-      href: '/NapierChristopher-CVen.pdf',
+      href: '/assets/NapierChristopher-CVen.pdf',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
