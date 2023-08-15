@@ -25,6 +25,7 @@ import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
 import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
 import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
+import porfolioImage12 from '../images/portfolio/portfolio-12.jpg';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
 import {
@@ -216,64 +217,70 @@ export const portfolioItems: PortfolioItem[] = [
     image: porfolioImage1,
   },
   {
-    title: 'Wireless',
-    description: 'Give a short description of your project here.',
+    title: 'DIY',
+    description: 'I am a project manager. I always have a project on the go. This is also true at home.',
     url: 'https://timbaker.me',
     image: porfolioImage2,
   },
   {
     title: 'Virtual Reality',
-    description: 'Give a short description of your project here.',
+    description: 'I like the potential of VR. I follow the news.',
     url: 'https://timbaker.me',
     image: porfolioImage3,
   },
   {
     title: 'Vertical Farming',
-    description: 'Give a short description of your project here.',
+    description: 'This is my retirement plan. Would love to own a fully automated vertical farm. Or ten.',
     url: 'https://timbaker.me',
     image: porfolioImage4,
   },
   {
     title: 'Skateboarding',
-    description: 'Give a short description of your project here.',
+    description: 'My current personal challenge - learn to skateboard.',
     url: 'https://timbaker.me',
     image: porfolioImage5,
   },
   {
     title: 'Robotics',
-    description: 'Give a short description of your project here.',
+    description: 'Since my university days, I have been playing with robots.',
     url: 'https://timbaker.me',
     image: porfolioImage6,
   },
   {
     title: 'Real Estate',
-    description: 'Give a short description of your project here.',
+    description: 'A passive income experiment.',
     url: 'https://timbaker.me',
     image: porfolioImage7,
   },
   {
     title: 'Gardening',
-    description: 'Give a short description of your project here.',
+    description: 'Total amateur but really enjoy getting my hands dirty.',
     url: 'https://timbaker.me',
     image: porfolioImage8,
   },
   {
     title: 'Technology',
-    description: 'Give a short description of your project here.',
+    description: 'Subscribed to all the newsletters.',
     url: 'https://timbaker.me',
     image: porfolioImage9,
   },
   {
     title: 'Electric Cars',
-    description: 'Give a short description of your project here.',
+    description: 'Definitely the future. Would love to by more hands-on myself.',
     url: 'https://timbaker.me',
     image: porfolioImage10,
   },
   {
     title: 'Martial Arts',
-    description: 'Give a short description of your project here.',
+    description: 'Bit of this, bit of that. Currently learning Karate.',
     url: 'https://timbaker.me',
     image: porfolioImage11,
+  },
+  {
+    title: 'Photograpy',
+    description: 'Budding photographer',
+    url: 'https://timbaker.me',
+    image: porfolioImage12,
   },
 ];
 
@@ -363,7 +370,7 @@ export const testimonial: TestimonialSection = {
     {
       name: 'Charles Darwin',
       text: 'In the struggle for survival, the fittest win out at the expense of their rivals because they succeed in adapting themselves best to their environment.',
-      image: 'http://descubriendogalapagos.ec/wp-content/uploads/2013/07/darwin-182x182.png',
+      image: 'https://herder.com.mx/sites/default/files/styles/writer/public/uploads/writer_images/charles_darwin.jpg',
     },
     {
       name: 'T. E. Lawrence',
