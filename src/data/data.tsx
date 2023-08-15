@@ -85,7 +85,7 @@ export const heroData: Hero = {
   ),
   actions: [
     {
-      href: '/data/NapierChristopher-CVen.pdf',
+      href: '/NapierChristopher-CVen.pdf',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
@@ -211,14 +211,14 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Woodworking',
-    description: 'Give a short description of your project here.',
+    title: 'DIY',
+    description: 'I am a project manager. I always have a project on the go. This is also true at home.',
     url: 'https://timbaker.me',
     image: porfolioImage1,
   },
   {
-    title: 'DIY',
-    description: 'I am a project manager. I always have a project on the go. This is also true at home.',
+    title: 'Wireless',
+    description: 'CCNP qualified once, I still love wireless communication.',
     url: 'https://timbaker.me',
     image: porfolioImage2,
   },
@@ -248,7 +248,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     title: 'Real Estate',
-    description: 'A passive income experiment.',
+    description: 'My passive income experiment.',
     url: 'https://timbaker.me',
     image: porfolioImage7,
   },
@@ -370,7 +370,7 @@ export const testimonial: TestimonialSection = {
     {
       name: 'Charles Darwin',
       text: 'In the struggle for survival, the fittest win out at the expense of their rivals because they succeed in adapting themselves best to their environment.',
-      image: 'https://herder.com.mx/sites/default/files/styles/writer/public/uploads/writer_images/charles_darwin.jpg',
+      image: 'https://soulinamind.com/wp-content/uploads/2021/01/charles-darwin.png',
     },
     {
       name: 'T. E. Lawrence',
