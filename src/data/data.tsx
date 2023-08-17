@@ -309,7 +309,7 @@ export const experience: TimelineItem[] = [
     title: 'IT Program Manager',
     content: (
       <p>
-        IT Program management of apps and other critical software component projects
+        IT Program management of apps and other critical software component projects.
         Successfully on-boarded a new development into the Bank's SDLC process
         Portfolio construction from SAA to Template
       </p>
@@ -321,10 +321,10 @@ export const experience: TimelineItem[] = [
     title: 'Business Project Manager',
     content: (
       <p>
-        Client integration manager for an enterprise platform solution
-        Agile Product Owner working with JIRA, Confluence and ADO
-        Facilitating between product management, UX, sales and development teams
-        Providing regular status updates to clients and stakeholders
+        Client integration manager for an enterprise platform solution.
+        Agile Product Owner working with JIRA, Confluence and ADO.
+        Facilitating between business project owners, UX, sales and development teams.
+        Providing regular status updates to clients and stakeholders.
       </p>
     ),
   },
@@ -334,10 +334,10 @@ export const experience: TimelineItem[] = [
     title: 'Project Manager',
     content: (
       <p>
-        Managed an integrated robotic automation project with a budget of €15M
-        Coordinated between multiple international teams with a total of over 30 employees working in a matrix organization
-        Reported progress regularly to a Steering Committee and other stakeholders
-        Introduced Agile processes and methodology to the development teams
+        Managed an integrated robotic automation project with a budget of €15M.
+        Coordinated between multiple international teams with a total of over 30 employees working in a matrix organization.
+        Reported progress regularly to a Steering Committee and other stakeholders.
+        Introduced Agile processes and methodology to the development teams.
 
       </p>
     ),
@@ -348,8 +348,9 @@ export const experience: TimelineItem[] = [
     title: 'Network Engineer, Service Team Leader',
     content: (
       <p>
-        Cisco Certified Network Professional (CCNP)
-        Team leader for the Support Service Desk
+        Team leader for the 24/7 Support Service Desk.
+        Cisco Certified Network Professional (CCNP) qualified.
+        Both German and UK clients over telephone and email for voice and network related problems.
       </p>
     ),
   },
@@ -359,9 +360,33 @@ export const experience: TimelineItem[] = [
     title: 'Technology Analyst',
     content: (
       <p>
-        Project management and technical responsibilities in ICT projects
-        Brought together subject experts, government and business industry leaders
-
+        Project management and technical responsibilities in ICT projects.
+        Brought together subject experts, government and business industry leaders.
+        Technical documentation and editing, website and wikipage development and maintenance, and software development (C++).
+        It also required hardware and software problem diagnosis and resolution as well as network and server administration for a small company.
+      </p>
+    ),
+  },
+  {
+    date: 'February 2004 - June 2006',
+    location: 'Victoria University of Wellington',
+    title: 'Computer Programming Tutor',
+    content: (
+      <p>
+        Tutor of java, C++ and MIPS programming languages.
+        Working with students in the computer labs.
+        Clarifying concepts and demonstrating how to complete tasks on the computers in weekly workshops.
+      </p>
+    ),
+  },
+  {
+    date: 'July 2005 - December 2005',
+    location: 'Disneyland Resort Anaheim',
+    title: 'Street Vendor',
+    content: (
+      <p>
+        Multiple responsibilities in the food and beverage department including cashier, steward, busser, waiter and back-of-house.
+        This position taught me valuable communication and customer service skills.
       </p>
     ),
   },
