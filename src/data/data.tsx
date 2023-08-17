@@ -304,13 +304,24 @@ export const education: TimelineItem[] = [
 
 export const experience: TimelineItem[] = [
   {
-    date: 'January 2018 - Present',
+    date: 'January 2022 - Present',
+    location: 'Swiss Bank',
+    title: 'IT Program Manager',
+    content: (
+      <p>
+        IT Program management of apps and other critical software component projects
+        Successfully on-boarded a new development into the Bank's SDLC process
+        Portfolio construction from SAA to Template
+      </p>
+    ),
+  },
+  {
+    date: 'January 2018 - December 2021',
     location: 'Swiss Bank',
     title: 'Business Project Manager',
     content: (
       <p>
-        IT Program management for apps and other developments in the Digital Offering Program
-        Client technical integration management for an enterprise platform solution
+        Client integration manager for an enterprise platform solution
         Agile Product Owner working with JIRA, Confluence and ADO
         Facilitating between product management, UX, sales and development teams
         Providing regular status updates to clients and stakeholders
