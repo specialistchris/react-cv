@@ -278,7 +278,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     title: 'Photograpy',
-    description: 'Budding photographer',
+    description: 'Budding photographerrrr',
     url: 'https://timbaker.me',
     image: porfolioImage12,
   },
