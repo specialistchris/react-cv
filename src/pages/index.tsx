@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic';
 import {FC, memo} from 'react';
-// import {Link} from 'react-router-dom';
 
 import Page from '../components/Layout/Page';
 import About from '../components/Sections/About';
