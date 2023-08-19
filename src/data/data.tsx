@@ -412,6 +412,31 @@ export const testimonial: TestimonialSection = {
       name: 'T. E. Lawrence',
       text: 'All men dream but not equally. Those who dream by night in the dusty recesses of their minds wake in the day to find that is was vanity. But the dreamers of the day are dangerous men, for they may act on their dreams with open eyes, to make it possible.',
       image: 'https://www.wumingfoundation.com/images/TELawrence.jpg',
+    },    
+    {
+      name: 'Hunter S. Thompson',
+      text: 'Buy the ticket. Take the ride.',
+      image: 'https://www.wumingfoundation.com/images/TELawrence.jpg',
+    },
+    {
+      name: 'Franklin D. Roosevelt',
+      text: 'Above all, try something.',
+      image: 'https://www.wumingfoundation.com/images/TELawrence.jpg',
+    },
+    {
+      name: 'Abraham Lincoln',
+      text: 'In the end its not the years in your life that count its the life in your years.',
+      image: 'https://www.wumingfoundation.com/images/TELawrence.jpg',
+    },
+    {
+      name: 'Ghandi',
+      text: 'Action expresses priorities',
+      image: 'https://www.wumingfoundation.com/images/TELawrence.jpg',
+    },
+    {
+      name: 'Dale Carnegie',
+      text: 'Every day is a new life to a wise man.',
+      image: 'https://www.wumingfoundation.com/images/TELawrence.jpg',
     },
   ],
 };
