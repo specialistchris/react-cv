@@ -385,9 +385,9 @@
   version "8.44.0"
 
 "@headlessui/react@^1.7.14":
-  version "1.7.15"
-  resolved "https://registry.npmjs.org/@headlessui/react/-/react-1.7.15.tgz"
-  integrity sha512-OTO0XtoRQ6JPB1cKNFYBZv2Q0JMqMGNhYP1CjPvcJvjz8YGokz8oAj89HIYZGN0gZzn/4kk9iUpmMF4Q21Gsqw==
+  version "1.7.17"
+  resolved "https://registry.npmjs.org/@headlessui/react/-/react-1.7.17.tgz"
+  integrity sha512-4am+tzvkqDSSgiwrsEpGWqgGo9dz8qU5M3znCkC4PgkpY4HcCZzEDEvozltGGGHIKl9jbXbZPSH5TWn4sWJdow==
   dependencies:
     client-only "^0.0.1"
 
@@ -2379,9 +2379,7 @@ next@^13.4.1:
     "@next/swc-win32-x64-msvc" "13.4.10"
 
 nextjs@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.npmjs.org/nextjs/-/nextjs-0.0.3.tgz"
-  integrity sha512-mYbDUo4/sRAZ8TqK63PCpYnFiLg7BICG/ot9+guOrUKd4/Fo71ZmEQ41IZbH6nqbQvG7SXTBuofJXAIWfNho0w==
+  version "v0.0.3"
 
 node-releases@^2.0.12:
   version "2.0.13"
