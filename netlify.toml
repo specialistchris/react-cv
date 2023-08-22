@@ -2,9 +2,7 @@
 # all contexts unless otherwise overridden by more specific contexts.
 
 
-[build]
-  publish = "dist"
-  functions = './functions/'
+#[build]
 
   # Directory where the build system installs dependencies
   # and runs your build. Store your package.json, .nvmrc, etc here.
@@ -161,7 +159,7 @@
   # Directory with serverless functions, including background
   # functions, to deploy. This is an absolute path relative to the 
   # base directory, which is the root by default (/).
-  #directory = "functions/"
+  directory = "functions/"
 
 # Use [dev] to set configuration overrides for local
 # development environments run using Netlify Dev - except
