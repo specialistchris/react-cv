@@ -447,7 +447,7 @@ export const testimonial: TestimonialSection = {
 
 export const contact: ContactSection = {
   headerText: 'Get in touch with me.',
-  description: 'Email works. Not so active on the other mediums.',
+  description: 'Email works. Not so active elsewhere.',
   items: [
     {
       type: ContactType.Email,
