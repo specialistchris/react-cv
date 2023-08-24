@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import {FC, memo} from 'react';
+//import Link from 'next/link';
 
 import Page from '../components/Layout/Page';
 import About from '../components/Sections/About';
@@ -26,6 +27,7 @@ const Home: FC = memo(() => {
       <Testimonials />
       <Contact />
       <Footer />
+      {/* <Link href="/gallery">Gallery</Link> */}
     </Page>
   );
 });
