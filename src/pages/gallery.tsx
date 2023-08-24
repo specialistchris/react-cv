@@ -1,10 +1,12 @@
 import React from 'react'; 
+import {FC, memo} from 'react';
 
 
-function Gallery() {
+const Gallery: FC = memo(() => {
   return (
     <h1>this is the homepage</h1>
   );
-}
+});
+
 
 export default Gallery;
