@@ -10,3 +10,5 @@ const Gallery: FC = memo(() => {
 
 
 export default Gallery;
+
+
