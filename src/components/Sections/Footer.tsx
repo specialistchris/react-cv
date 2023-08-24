@@ -19,7 +19,7 @@ const Footer: FC = memo(() => (
       </div>
       <span className="text-sm text-neutral-700">© Copyright 2022 Tim Baker</span>
     </div>
-    <div className="absolute inset-x-0 -top-4 flex justify-center sm:-top-6">
+    <div className="absolute inset-x-0 -top-4 flex justify-right sm:-top-6">
       <a
         className="rounded-full bg-neutral-100 p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2"
         href='https://christophernapier.com/gallery'>
