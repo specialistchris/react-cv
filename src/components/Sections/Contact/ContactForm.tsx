@@ -1,7 +1,7 @@
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
 import {FC, memo, useCallback, useMemo, useState} from 'react';
-
+// import sgClient from '@sendgrid/mail' //'../../../../functions/sendgrid'
 
 
 interface FormData {
@@ -10,7 +10,8 @@ interface FormData {
   message: string;
 }
 
-const sgMail = require('@sendgrid/mail');
+// const sgMail = require('@sendgrid/mail');
+
 
 const ContactForm: FC = memo(() => {
   const defaultData = useMemo(
@@ -38,8 +39,12 @@ const ContactForm: FC = memo(() => {
   const handleSendMessage = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      // REF: https://github.com/Raiden0456/react-resume/blob/main/src/components/Sections/Contact/ContactForm.tsx
-      
+      // REF: emailjs1 https://github.com/Raiden0456/react-resume/blob/main/src/components/Sections/Contact/ContactForm.tsx
+      // axios example: https://github.com/bludbruda1/PersonalCV/blob/develop/src/components/Sections/Contact/ContactForm.tsx
+      // old emialjs: 
+
+
+      /* 
 
       const {
         SENDGRID_API_KEY,
@@ -48,6 +53,7 @@ const ContactForm: FC = memo(() => {
       } = process.env;
 
       sgMail.setApiKey(SENDGRID_API_KEY);
+      //sgClient.setApiKey(SENDGRID_API_KEY);
 
       const msg = {
         to: SENDGRID_TO_EMAIL,
@@ -62,6 +68,7 @@ const ContactForm: FC = memo(() => {
       };
 
       sgMail.send(msg);
+      //sgClient.send(msg); */
 
       console.log('Data to send: ', data);
     },

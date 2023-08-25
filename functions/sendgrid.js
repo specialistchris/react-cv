@@ -1,4 +1,6 @@
 const client = require('@sendgrid/mail');
+//const fs = require('fs');
+
 const {
   SENDGRID_API_KEY,
   SENDGRID_TO_EMAIL,
