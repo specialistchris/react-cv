@@ -1,12 +1,16 @@
+/* eslint @typescript-eslint/no-var-requires: "off" */
+
 import {FC, memo, useCallback, useMemo, useState} from 'react';
-//import sendgrid from '../../../../functions/sendgrid';
-//import client from '@sendgrid/mail';
+
+
 
 interface FormData {
   name: string;
   email: string;
   message: string;
 }
+
+const sgMail = require('@sendgrid/mail');
 
 const ContactForm: FC = memo(() => {
   const defaultData = useMemo(
@@ -36,33 +40,28 @@ const ContactForm: FC = memo(() => {
       event.preventDefault();
       // REF: https://github.com/Raiden0456/react-resume/blob/main/src/components/Sections/Contact/ContactForm.tsx
       
-      /* const {
+
+      const {
         SENDGRID_API_KEY,
         SENDGRID_TO_EMAIL,
         SENDGRID_FROM_EMAIL,
       } = process.env;
 
-      client.setApiKey(SENDGRID_API_KEY as string);
-    
-      const sgdata = {
-        to: SENDGRID_TO_EMAIL as string,
-        from: SENDGRID_FROM_EMAIL as string,
+      sgMail.setApiKey(SENDGRID_API_KEY);
+
+      const msg = {
+        to: SENDGRID_TO_EMAIL,
+        from: SENDGRID_FROM_EMAIL,
         subject: `New message from ${data.name} (${data.email})`,
-        html: data.message,
+        text: `
+          Dear user,    Here is your email.
+        `,
+        html: `
+          <p>Dear user,</p>    <p>Here is your email.</p>
+        `,
       };
-    
-      try {
-        await client.send(sgdata);
-        return {
-          statusCode: 200,
-          body: 'Message sent',
-        };
-      } catch (err: any) {
-        return {
-          //statusCode: err.code,
-          body: JSON.stringify({msg: err.message}),
-        };
-      } */
+
+      sgMail.send(msg);
 
       console.log('Data to send: ', data);
     },
