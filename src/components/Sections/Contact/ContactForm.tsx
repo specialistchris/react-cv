@@ -1,4 +1,6 @@
 import {FC, memo, useCallback, useMemo, useState} from 'react';
+//import sendgrid from '../../../../functions/sendgrid';
+//import client from '@sendgrid/mail';
 
 interface FormData {
   name: string;
@@ -32,9 +34,36 @@ const ContactForm: FC = memo(() => {
   const handleSendMessage = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      /**
-       * This is a good starting point to wire up your form submission logic
-       * */
+      // REF: https://github.com/Raiden0456/react-resume/blob/main/src/components/Sections/Contact/ContactForm.tsx
+      
+      /* const {
+        SENDGRID_API_KEY,
+        SENDGRID_TO_EMAIL,
+        SENDGRID_FROM_EMAIL,
+      } = process.env;
+
+      client.setApiKey(SENDGRID_API_KEY as string);
+    
+      const sgdata = {
+        to: SENDGRID_TO_EMAIL as string,
+        from: SENDGRID_FROM_EMAIL as string,
+        subject: `New message from ${data.name} (${data.email})`,
+        html: data.message,
+      };
+    
+      try {
+        await client.send(sgdata);
+        return {
+          statusCode: 200,
+          body: 'Message sent',
+        };
+      } catch (err: any) {
+        return {
+          //statusCode: err.code,
+          body: JSON.stringify({msg: err.message}),
+        };
+      } */
+
       console.log('Data to send: ', data);
     },
     [data],
