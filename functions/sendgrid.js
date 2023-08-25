@@ -1,44 +1,31 @@
-const client = require("@sendgrid/mail")
+const client = require('@sendgrid/mail');
+const {
+  SENDGRID_API_KEY,
+  SENDGRID_TO_EMAIL,
+  SENDGRID_FROM_EMAIL,
+} = process.env;
 
-function sendEmail(client, message, senderEmail, senderName) {
-  return new Promise((fulfill, reject) => {
-    const data = {
-      from: {
-        email: senderEmail,
-        name: senderName
-      },
-      subject: 'Netlify Function - Sendgrid Email',
-      to: 'christopher.napier@hotmail.com',
-      html: `Hey, you\'ve sent an email from Netlify Functions<br/>Message: ${message}`
-    }
+exports.handler = async function (event, context, callback) {
+  const { message, senderEmail, senderName } = JSON.parse(event.body);
+  client.setApiKey(SENDGRID_API_KEY);
 
-    client
-      .send(data)
-      .then(([response, body]) => {
-        fulfill(response)
-      })
-      .catch(error => reject(error))
-  })
-}
+  const data = {
+    to: SENDGRID_TO_EMAIL,
+    from: SENDGRID_FROM_EMAIL,
+    subject: `New message from ${senderName} (${senderEmail})`,
+    html: message,
+  };
 
-exports.handler = function(event, context, callback) {
-  const {
-    SENDGRID_API_KEY,
-    SENDGRID_SENDER_EMAIL,
-    SENDGRID_SENDER_NAME
-  } = process.env
-
-  const body = JSON.parse(event.body)
-  const message = body.message
-
-  client.setApiKey(SENDGRID_API_KEY)
-
-  sendEmail(
-    client,
-    message,
-    SENDGRID_SENDER_EMAIL,
-    SENDGRID_SENDER_NAME
-  )
-  .then(response => callback(null, { statusCode: response.statusCode }))
-  .catch(err => callback(err, null))
-}
+  try {
+    await client.send(data);
+    return {
+      statusCode: 200,
+      body: 'Message sent',
+    };
+  } catch (err) {
+    return {
+      statusCode: err.code,
+      body: JSON.stringify({ msg: err.message }),
+    };
+  }
+};
