@@ -3,6 +3,9 @@
 import {FC, memo, useCallback, useMemo, useState} from 'react';
 // import sgClient from '@sendgrid/mail' //'../../../../functions/sendgrid'
 
+const sgMail = require('@sendgrid/mail');
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 export interface FormData {
   name: string;
@@ -10,7 +13,21 @@ export interface FormData {
   message: string;
 }
 
-// const sgMail = require('@sendgrid/mail');
+const msg = {
+  to: 'test@example.com', // Change to your recipient
+  from: 'test@example.com', // Change to your verified sender
+  subject: 'Sending with SendGrid is Fun',
+  text: 'and easy to do anywhere, even with Node.js',
+  html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+}
+
+/*   .then(() => {
+    console.log('Email sent')
+  })
+  .catch((error) => {
+    console.error(error)
+  }) */
+
 
 // convoluted sendgrid example!!!
 // =========  https://github.com/bthayes42/portfolio/blob/main/src/components/Sections/Contact/ContactForm.tsx =========
@@ -47,6 +64,7 @@ const ContactForm: FC = memo(() => {
   const handleFormMessage = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
+      sgMail.send(msg);
       try {
         const response = await fetch('/api/emailcode', {
           method: 'POST',
@@ -118,6 +136,7 @@ export default ContactForm;
       // old emialjs: https://github.com/bornagojsic/bornagojsic-web/blob/main/src/components/Sections/Contact/ContactForm.tsx
 
 
+      const client = require('@sendgrid/mail');
 
 
       const {
