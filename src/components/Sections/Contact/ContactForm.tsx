@@ -4,7 +4,7 @@ import {FC, memo, useCallback, useMemo, useState} from 'react';
 // import sgClient from '@sendgrid/mail' //'../../../../functions/sendgrid'
 
 
-interface FormData {
+export interface FormData {
   name: string;
   email: string;
   message: string;
@@ -44,42 +44,27 @@ const ContactForm: FC = memo(() => {
     [data],
   );
 
-  const handleSendMessage = useCallback(
+  const handleFormMessage = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      // REF: emailjs1 https://github.com/Raiden0456/react-resume/blob/main/src/components/Sections/Contact/ContactForm.tsx
-      // axios example: https://github.com/bludbruda1/PersonalCV/blob/develop/src/components/Sections/Contact/ContactForm.tsx
-      // axios exmpale: https://github.com/bibinalias/bibinalias.github.io/blob/main/src/components/Sections/Contact/ContactForm.tsx
-      // old emialjs: https://github.com/bornagojsic/bornagojsic-web/blob/main/src/components/Sections/Contact/ContactForm.tsx
+      try {
+        const response = await fetch('/api/emailcode', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
 
-
-
-      /* 
-
-      const {
-        SENDGRID_API_KEY,
-        SENDGRID_TO_EMAIL,
-        SENDGRID_FROM_EMAIL,
-      } = process.env;
-
-      sgMail.setApiKey(SENDGRID_API_KEY);
-      //sgClient.setApiKey(SENDGRID_API_KEY);
-
-      const msg = {
-        to: SENDGRID_TO_EMAIL,
-        from: SENDGRID_FROM_EMAIL,
-        subject: `New message from ${data.name} (${data.email})`,
-        text: `
-          Dear user,    Here is your email.
-        `,
-        html: `
-          <p>Dear user,</p>    <p>Here is your email.</p>
-        `,
-      };
-
-      sgMail.send(msg);
-      //sgClient.send(msg); */
-
+        if (response.ok) {
+          const data = await response.json();
+          console.log(data.message); // 'Email sent successfully'
+        } else {
+          console.error('Failed to send email');
+        }
+      } catch (error) {
+        console.error('Failed to send email:', error);
+      }
       console.log('Data to send: ', data);
     },
     [data],
@@ -89,7 +74,7 @@ const ContactForm: FC = memo(() => {
     'bg-neutral-700 border-0 focus:border-0 focus:outline-none focus:ring-1 focus:ring-orange-600 rounded-md placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm';
 
   return (
-    <form className="grid min-h-[320px] grid-cols-1 gap-y-4" data-netlify="true" method="POST" onSubmit={handleSendMessage}>
+    <form className="grid min-h-[320px] grid-cols-1 gap-y-4" data-netlify="true" method="POST" onSubmit={handleFormMessage}>
       <input className={inputClasses} name="name" onChange={onChange} placeholder="Name" required type="text" />
       <input
         autoComplete="email"
@@ -121,3 +106,46 @@ const ContactForm: FC = memo(() => {
 
 ContactForm.displayName = 'ContactForm';
 export default ContactForm;
+
+
+      /* 
+  const handleSendMessage = useCallback(
+    async (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      // REF: emailjs1 https://github.com/Raiden0456/react-resume/blob/main/src/components/Sections/Contact/ContactForm.tsx
+      // axios example: https://github.com/bludbruda1/PersonalCV/blob/develop/src/components/Sections/Contact/ContactForm.tsx
+      // axios exmpale: https://github.com/bibinalias/bibinalias.github.io/blob/main/src/components/Sections/Contact/ContactForm.tsx
+      // old emialjs: https://github.com/bornagojsic/bornagojsic-web/blob/main/src/components/Sections/Contact/ContactForm.tsx
+
+
+
+
+      const {
+        SENDGRID_API_KEY,
+        SENDGRID_TO_EMAIL,
+        SENDGRID_FROM_EMAIL,
+      } = process.env;
+
+      sgMail.setApiKey(SENDGRID_API_KEY);
+      //sgClient.setApiKey(SENDGRID_API_KEY);
+
+      const msg = {
+        to: SENDGRID_TO_EMAIL,
+        from: SENDGRID_FROM_EMAIL,
+        subject: `New message from ${data.name} (${data.email})`,
+        text: `
+          Dear user,    Here is your email.
+        `,
+        html: `
+          <p>Dear user,</p>    <p>Here is your email.</p>
+        `,
+      };
+
+      sgMail.send(msg);
+      //sgClient.send(msg); 
+
+      console.log('Data to send: ', data);
+    },
+    [data],
+  );
+*/
