@@ -75,11 +75,11 @@ export const heroData: Hero = {
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         I'm a Switzerland based <strong className="text-stone-100">Project Manager</ strong>, currently working
-        at <strong className="text-stone-100">a bank</strong> helping construct portfolios.
+        at <strong className="text-stone-100">a bank</strong> helping to construct portfolios.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         I don't have free time, I have a <strong className="text-stone-100">family</strong>,
-        but sometimes I like to <strong className="text-stone-100">kaizen</strong>.
+        and, whenever I can, I like to <strong className="text-stone-100">kaizen</strong>.
       </p>
     </>
   ),
@@ -103,7 +103,7 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `More than 10 years of project management in various industries. I started in 
+  description: `More than 10 years of project management in various industries. I started with 
   information technology and engineering, then added an MBA degree and now find myself in Swiss Banking.
   I am skilled at working in business and technical domains and bridging the gaps between them.`,
   aboutItems: [
@@ -416,27 +416,27 @@ export const testimonial: TestimonialSection = {
     {
       name: 'Hunter S. Thompson',
       text: 'Buy the ticket. Take the ride.',
-      image: 'https://www.wumingfoundation.com/images/TELawrence.jpg',
+      image: 'https://www.phrases.org.uk/famous-last-words/images/hunter-s-thompson-m.jpg',
     },
     {
       name: 'Franklin D. Roosevelt',
       text: 'Above all, try something.',
-      image: 'https://www.wumingfoundation.com/images/TELawrence.jpg',
+      image: 'https://www.dicocitations.com/images_auteur/3857.jpg',
     },
     {
       name: 'Abraham Lincoln',
       text: 'In the end its not the years in your life that count its the life in your years.',
-      image: 'https://www.wumingfoundation.com/images/TELawrence.jpg',
+      image: 'https://2.bp.blogspot.com/-hXiGVvhi6xc/ULoR83l9LCI/AAAAAAAAAEA/fvjGCm-2tMg/s1600/Abraham+Lincoln.jpg',
     },
     {
       name: 'Ghandi',
       text: 'Action expresses priorities',
-      image: 'https://www.wumingfoundation.com/images/TELawrence.jpg',
+      image: 'https://www.droominfo.nl/img/beroemd/ghandi.jpg',
     },
     {
       name: 'Dale Carnegie',
       text: 'Every day is a new life to a wise man.',
-      image: 'https://www.wumingfoundation.com/images/TELawrence.jpg',
+      image: 'https://www.groovehq.com/blog/wp-content/uploads/2018/09/dale-carnegie.jpg',
     },
   ],
 };

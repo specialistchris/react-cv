@@ -12,6 +12,14 @@ interface FormData {
 
 // const sgMail = require('@sendgrid/mail');
 
+// convoluted sendgrid example!!!
+// =========  https://github.com/bthayes42/portfolio/blob/main/src/components/Sections/Contact/ContactForm.tsx =========
+
+
+// https://rosso.codes/blog/send-email-using-netlify-functions-and-sendgrid-api/
+// https://slawinski.dev/blog/start-sending-emails-using-netlify-lambda-functions-and-sendgrid/
+// continue from here: https://github.com/tbakerx/react-resume-template/forks?include=active&page=2&period=6mo&sort_by=stargazer_counts
+
 
 const ContactForm: FC = memo(() => {
   const defaultData = useMemo(
@@ -41,7 +49,9 @@ const ContactForm: FC = memo(() => {
       event.preventDefault();
       // REF: emailjs1 https://github.com/Raiden0456/react-resume/blob/main/src/components/Sections/Contact/ContactForm.tsx
       // axios example: https://github.com/bludbruda1/PersonalCV/blob/develop/src/components/Sections/Contact/ContactForm.tsx
-      // old emialjs: 
+      // axios exmpale: https://github.com/bibinalias/bibinalias.github.io/blob/main/src/components/Sections/Contact/ContactForm.tsx
+      // old emialjs: https://github.com/bornagojsic/bornagojsic-web/blob/main/src/components/Sections/Contact/ContactForm.tsx
+
 
 
       /* 
