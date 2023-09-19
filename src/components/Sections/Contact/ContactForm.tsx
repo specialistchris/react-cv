@@ -1,27 +1,35 @@
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
 import {FC, memo, useCallback, useMemo, useState} from 'react';
-// import sgClient from '@sendgrid/mail' //'../../../../functions/sendgrid'
 
-const sgMail = require('@sendgrid/mail');
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+// import sgMail from '@sendgrid/mail'; //'../../../../functions/sendgrid'
+// const sgMail = require('@sendgrid/mail');
+
+
+// const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
+// const SENDGRID_TO_EMAIL = process.env.SENDGRID_TO_EMAIL;
+// const SENDGRID_FROM_EMAIL = process.env.SENDGRID_FROM_EMAIL;
+
+// sgMail.setApiKey(SENDGRID_API_KEY);
 
 export interface FormData {
+  to: string;
+  from: string;
   name: string;
   email: string;
   message: string;
-}
+};
 
+/* 
 const msg = {
-  to: 'test@example.com', // Change to your recipient
-  from: 'test@example.com', // Change to your verified sender
+  to: SENDGRID_TO_EMAIL, //specialistchris@gmail.com', // Change to your recipient
+  from: SENDGRID_FROM_EMAIL, //'christopher.napier@hotmail.com', // Change to your verified sender
   subject: 'Sending with SendGrid is Fun',
   text: 'and easy to do anywhere, even with Node.js',
   html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-}
-
-/*   .then(() => {
+};
+  .then(() => {
     console.log('Email sent')
   })
   .catch((error) => {
@@ -41,6 +49,8 @@ const msg = {
 const ContactForm: FC = memo(() => {
   const defaultData = useMemo(
     () => ({
+      to: 'contact@christophernapier.com', //SENDGRID_TO_EMAIL, //specialistchris@gmail.com', 
+      from: 'christopher.napier@hotmail.com', //SENDGRID_FROM_EMAIL, //'christopher.napier@hotmail.com', 
       name: '',
       email: '',
       message: '',
@@ -64,7 +74,7 @@ const ContactForm: FC = memo(() => {
   const handleFormMessage = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      sgMail.send(msg);
+      // sgMail.send(msg);
       try {
         const response = await fetch('/api/emailcode', {
           method: 'POST',
@@ -88,7 +98,7 @@ const ContactForm: FC = memo(() => {
     [data],
   );
 
-  const inputClasses =
+   const inputClasses =
     'bg-neutral-700 border-0 focus:border-0 focus:outline-none focus:ring-1 focus:ring-orange-600 rounded-md placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm';
 
   return (
