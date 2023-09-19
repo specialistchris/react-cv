@@ -3,16 +3,6 @@
 import {FC, memo, useCallback, useMemo, useState} from 'react';
 
 
-// import sgMail from '@sendgrid/mail'; //'../../../../functions/sendgrid'
-// const sgMail = require('@sendgrid/mail');
-
-
-// const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
-// const SENDGRID_TO_EMAIL = process.env.SENDGRID_TO_EMAIL;
-// const SENDGRID_FROM_EMAIL = process.env.SENDGRID_FROM_EMAIL;
-
-// sgMail.setApiKey(SENDGRID_API_KEY);
-
 export interface FormData {
   to: string;
   from: string;
@@ -37,20 +27,13 @@ const msg = {
   }) */
 
 
-// convoluted sendgrid example!!!
-// =========  https://github.com/bthayes42/portfolio/blob/main/src/components/Sections/Contact/ContactForm.tsx =========
-
-
-// https://rosso.codes/blog/send-email-using-netlify-functions-and-sendgrid-api/
-// https://slawinski.dev/blog/start-sending-emails-using-netlify-lambda-functions-and-sendgrid/
-// continue from here: https://github.com/tbakerx/react-resume-template/forks?include=active&page=2&period=6mo&sort_by=stargazer_counts
 
 
 const ContactForm: FC = memo(() => {
   const defaultData = useMemo(
     () => ({
       to: 'contact@christophernapier.com', //SENDGRID_TO_EMAIL, //specialistchris@gmail.com', 
-      from: 'christopher.napier@hotmail.com', //SENDGRID_FROM_EMAIL, //'christopher.napier@hotmail.com', 
+      from: 'christopher.napier@hotmail.com', //SENDGRID_FROM_EMAIL,  
       name: '',
       email: '',
       message: '',
@@ -74,14 +57,20 @@ const ContactForm: FC = memo(() => {
   const handleFormMessage = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      // sgMail.send(msg);
+      
       try {
-        const response = await fetch('/api/emailcode', {
+        const response = await fetch('./.netlify/functions/triggerEmail', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify({
+            to: data.to,
+            from: data.from,
+            name: data.name,
+            email: data.email,
+            message: data.message,
+          }),
         });
 
         if (response.ok) {
@@ -103,7 +92,14 @@ const ContactForm: FC = memo(() => {
 
   return (
     <form className="grid min-h-[320px] grid-cols-1 gap-y-4" data-netlify="true" method="POST" onSubmit={handleFormMessage}>
-      <input className={inputClasses} name="name" onChange={onChange} placeholder="Name" required type="text" />
+      <input 
+        className={inputClasses} 
+        name="name" 
+        onChange={onChange} 
+        placeholder="Name" 
+        required 
+        type="text" 
+      />
       <input
         autoComplete="email"
         className={inputClasses}
@@ -125,7 +121,8 @@ const ContactForm: FC = memo(() => {
       <button
         aria-label="Submit contact form"
         className="w-max rounded-full border-2 border-orange-600 bg-stone-900 px-4 py-2 text-sm font-medium text-white shadow-md outline-none hover:bg-stone-800 focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800"
-        type="submit">
+        type="submit"
+        >
         Send Message
       </button>
     </form>
@@ -140,10 +137,6 @@ export default ContactForm;
   const handleSendMessage = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      // REF: emailjs1 https://github.com/Raiden0456/react-resume/blob/main/src/components/Sections/Contact/ContactForm.tsx
-      // axios example: https://github.com/bludbruda1/PersonalCV/blob/develop/src/components/Sections/Contact/ContactForm.tsx
-      // axios exmpale: https://github.com/bibinalias/bibinalias.github.io/blob/main/src/components/Sections/Contact/ContactForm.tsx
-      // old emialjs: https://github.com/bornagojsic/bornagojsic-web/blob/main/src/components/Sections/Contact/ContactForm.tsx
 
 
       const client = require('@sendgrid/mail');
@@ -178,3 +171,19 @@ export default ContactForm;
     [data],
   );
 */
+
+
+
+
+// import sgMail from '@sendgrid/mail'; //'../../../../functions/sendgrid'
+// const sgMail = require('@sendgrid/mail');
+
+// convoluted sendgrid example!!! =========  https://github.com/bthayes42/portfolio/blob/main/src/components/Sections/Contact/ContactForm.tsx =========
+// https://rosso.codes/blog/send-email-using-netlify-functions-and-sendgrid-api/
+// https://slawinski.dev/blog/start-sending-emails-using-netlify-lambda-functions-and-sendgrid/
+// REF: emailjs1 https://github.com/Raiden0456/react-resume/blob/main/src/components/Sections/Contact/ContactForm.tsx
+// axios example: https://github.com/bludbruda1/PersonalCV/blob/develop/src/components/Sections/Contact/ContactForm.tsx
+// axios exmpale: https://github.com/bibinalias/bibinalias.github.io/blob/main/src/components/Sections/Contact/ContactForm.tsx
+// old emialjs: https://github.com/bornagojsic/bornagojsic-web/blob/main/src/components/Sections/Contact/ContactForm.tsx
+
+// continue from here: https://github.com/tbakerx/react-resume-template/forks?include=active&page=2&period=6mo&sort_by=stargazer_counts
