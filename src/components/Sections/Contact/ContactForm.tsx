@@ -13,8 +13,8 @@ export interface FormData {
 const ContactForm: FC = memo(() => {
   const defaultData = useMemo(
     () => ({
-      to: 'contact@christophernapier.com', //SENDGRID_TO_EMAIL, //specialistchris@gmail.com', 
-      from: 'christopher.napier@hotmail.com', //SENDGRID_FROM_EMAIL,  
+      to: 'specialistchris@gmail.com', //SENDGRID_TO_EMAIL
+      from: 'contact@christophernapier.com', //SENDGRID_FROM_EMAIL
       name: '',
       email: '',
       message: '',
@@ -40,15 +40,15 @@ const ContactForm: FC = memo(() => {
       event.preventDefault();
       
       try {
-        console.log('trying');
+        console.log('Trying with data: ', data);
         const response = await fetch('./.netlify/functions/triggerEmail', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            to: data.to,
-            from: data.from,
+            // to: data.to,
+            // from: data.from,
             name: data.name,
             email: data.email,
             message: data.message,
@@ -64,7 +64,6 @@ const ContactForm: FC = memo(() => {
       } catch (error) {
         console.error('Failed to send email:', error);
       }
-      console.log('Data to send: ', data);
     },
     [data],
   );
@@ -77,6 +76,7 @@ const ContactForm: FC = memo(() => {
       <input 
         className={inputClasses} 
         name="name" 
+        id="name"
         onChange={onChange} 
         placeholder="Name" 
         required 
@@ -86,6 +86,7 @@ const ContactForm: FC = memo(() => {
         autoComplete="email"
         className={inputClasses}
         name="email"
+        id="email"
         onChange={onChange}
         placeholder="Email"
         required
@@ -95,6 +96,7 @@ const ContactForm: FC = memo(() => {
         className={inputClasses}
         maxLength={250}
         name="message"
+        id="message"
         onChange={onChange}
         placeholder="Message"
         required
