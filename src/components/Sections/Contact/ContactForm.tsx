@@ -2,7 +2,6 @@
 
 import {FC, memo, useCallback, useMemo, useState} from 'react';
 
-
 export interface FormData {
   to: string;
   from: string;
@@ -10,24 +9,6 @@ export interface FormData {
   email: string;
   message: string;
 };
-
-/* 
-const msg = {
-  to: SENDGRID_TO_EMAIL, //specialistchris@gmail.com', // Change to your recipient
-  from: SENDGRID_FROM_EMAIL, //'christopher.napier@hotmail.com', // Change to your verified sender
-  subject: 'Sending with SendGrid is Fun',
-  text: 'and easy to do anywhere, even with Node.js',
-  html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-};
-  .then(() => {
-    console.log('Email sent')
-  })
-  .catch((error) => {
-    console.error(error)
-  }) */
-
-
-
 
 const ContactForm: FC = memo(() => {
   const defaultData = useMemo(
@@ -59,6 +40,7 @@ const ContactForm: FC = memo(() => {
       event.preventDefault();
       
       try {
+        console.log('trying');
         const response = await fetch('./.netlify/functions/triggerEmail', {
           method: 'POST',
           headers: {
@@ -75,9 +57,9 @@ const ContactForm: FC = memo(() => {
 
         if (response.ok) {
           const data = await response.json();
-          console.log(data.message); // 'Email sent successfully'
+          console.log('Response OK for data.message: ', data.message);
         } else {
-          console.error('Failed to send email');
+          console.error('Response not OK');
         }
       } catch (error) {
         console.error('Failed to send email:', error);
@@ -131,6 +113,24 @@ const ContactForm: FC = memo(() => {
 
 ContactForm.displayName = 'ContactForm';
 export default ContactForm;
+
+
+
+/* 
+const msg = {
+  to: SENDGRID_TO_EMAIL, //specialistchris@gmail.com', // Change to your recipient
+  from: SENDGRID_FROM_EMAIL, //'christopher.napier@hotmail.com', // Change to your verified sender
+  subject: 'Sending with SendGrid is Fun',
+  text: 'and easy to do anywhere, even with Node.js',
+  html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+};
+  .then(() => {
+    console.log('Email sent')
+  })
+  .catch((error) => {
+    console.error(error)
+  }) */
+
 
 
       /* 
