@@ -13,11 +13,11 @@ export interface FormData {
 const ContactForm: FC = memo(() => {
   const defaultData = useMemo(
     () => ({
-      to: 'specialistchris@gmail.com', //SENDGRID_TO_EMAIL
-      from: 'contact@christophernapier.com', //SENDGRID_FROM_EMAIL
-      name: '',
       email: '',
+      from: 'contact@christophernapier.com', //SENDGRID_FROM_EMAIL
       message: '',
+      name: '',
+      to: 'defaulttoemail', //SENDGRID_TO_EMAIL
     }),
     [],
   );
@@ -42,25 +42,26 @@ const ContactForm: FC = memo(() => {
       try {
         console.log('Trying with data: ', data);
         
+        // call to my function
         const response = await fetch('./.netlify/functions/triggerEmail', {
           method: 'POST',
-          headers: {
+/*           headers: {
             'Content-Type': 'application/json',
-            //"netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,   
-          },
+          }, */
           body: JSON.stringify({
             from: "contact@christophernapier.com",
             to: "specialistchris@gmail.com",
-            subject: "email from website",
+            subject: "email from website HC in contactform",
             parameters: {
-              name: "name hard coded"
+              name: "name hard coded in contact form",
+              email: "email hard coded in contact form",
             },
           }),
         });
 
         if (response.ok) {
-          const data = await response.json();
-          console.log('Response OK for data.message: ', data.message);
+          const responsedata = await response.json();
+          console.log('Response OK. responsedata: ', responsedata);
         } else {
           console.error('Response not OK');
         }

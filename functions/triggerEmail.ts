@@ -10,15 +10,16 @@ const handler: Handler = async function(event) {
   }
 
   const requestBody = JSON.parse(event.body) as {
-    to: string;
-    from: string;
-    name: string;
     email: string;
+    from: string;
     message: string;
+    name: string;
+    to: string;
   };
 
   //automatically generated snippet from the email preview
   //sends a request to an email handler for a subscribed email
+  // template name
   await fetch(`${process.env.URL}/.netlify/functions/emails/contactemail`, {
     headers: {
       "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET as string,
@@ -27,9 +28,10 @@ const handler: Handler = async function(event) {
     body: JSON.stringify({
       from: "contact@christophernapier.com",
       to: "christopher.napier@hotmail.com",
-      subject: "trigger email HC subject",
+      subject: "trigger Email HC subject",
       parameters: {
-        name: ""
+        name: requestBody.name,
+        email: requestBody.email,
       },
     }),
   });
