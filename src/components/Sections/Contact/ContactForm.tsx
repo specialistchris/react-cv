@@ -49,11 +49,11 @@ const ContactForm: FC = memo(() => {
             //"netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,   
           },
           body: JSON.stringify({
-            from: "",
-            to: "",
-            subject: "",
+            from: "contact@christophernapier.com",
+            to: "specialistchris@gmail.com",
+            subject: "email from website",
             parameters: {
-              name: ""
+              name: "name hard coded"
             },
           }),
         });
