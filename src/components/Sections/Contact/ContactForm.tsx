@@ -46,7 +46,6 @@ const ContactForm: FC = memo(() => {
         // call to my function
         const response = await fetch('./.netlify/functions/triggerEmail', {
           method: 'POST',
-          // headers: {'Content-Type': 'application/json',},
           body: JSON.stringify({
             from: "contact@christophernapier.com",
             to: "christopher.napier@hotmail.com",
