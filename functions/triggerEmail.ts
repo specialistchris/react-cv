@@ -30,6 +30,9 @@ const handler: Handler = async function(event) {
       from: requestBody.from,
       to: requestBody.to,
       subject: requestBody.subject,
+      name: requestBody.name,
+      email: requestBody.email,
+      message: requestBody.message,
       parameters: {
         name: requestBody.name,
         email: requestBody.email,
