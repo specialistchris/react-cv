@@ -41,17 +41,20 @@ const ContactForm: FC = memo(() => {
       
       try {
         console.log('Trying with data: ', data);
-        const response = await fetch('./.netlify/functions/triggerEmail', {
+        
+        const response = await fetch('${process.env.URL}/.netlify/functions/emails/contactemail', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            //"netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,   
           },
           body: JSON.stringify({
-            // to: data.to,
-            // from: data.from,
-            name: data.name,
-            email: data.email,
-            message: data.message,
+            from: "",
+            to: "",
+            subject: "",
+            parameters: {
+              name: ""
+            },
           }),
         });
 
