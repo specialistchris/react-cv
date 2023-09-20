@@ -14,7 +14,7 @@ const ContactForm: FC = memo(() => {
   const defaultData = useMemo(
     () => ({
       from: 'contact@christophernapier.com', //SENDGRID_FROM_EMAIL
-      to: 'defaulttoemail', //SENDGRID_TO_EMAIL
+      to: '', //SENDGRID_TO_EMAIL
       subject: '',
       name: '',
       email: '',
@@ -49,12 +49,12 @@ const ContactForm: FC = memo(() => {
           // headers: {'Content-Type': 'application/json',},
           body: JSON.stringify({
             from: "contact@christophernapier.com",
-            to: "specialistchris@gmail.com",
-            subject: "email from website HC in contactform",
+            to: "christopher.napier@hotmail.com",
+            subject: "email from website contact form",
             parameters: {
-              name: "name hard coded in contact form",
-              email: "email hard coded in contact form",
-              message: "message hard coded in contact form"
+              name: data.name,
+              email: data.email,
+              message: data.message,
             },
           }),
         });
