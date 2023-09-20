@@ -10,11 +10,12 @@ const handler: Handler = async function(event) {
   }
 
   const requestBody = JSON.parse(event.body) as {
-    email: string;
     from: string;
-    message: string;
-    name: string;
     to: string;
+    subject: string;
+    name: string;
+    email: string;
+    message: string;
   };
 
   //automatically generated snippet from the email preview
@@ -32,6 +33,7 @@ const handler: Handler = async function(event) {
       parameters: {
         name: requestBody.name,
         email: requestBody.email,
+        message: requestBody.message,
       },
     }),
   });

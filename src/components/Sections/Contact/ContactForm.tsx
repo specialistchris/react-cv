@@ -13,11 +13,12 @@ export interface FormData {
 const ContactForm: FC = memo(() => {
   const defaultData = useMemo(
     () => ({
-      email: '',
       from: 'contact@christophernapier.com', //SENDGRID_FROM_EMAIL
-      message: '',
-      name: '',
       to: 'defaulttoemail', //SENDGRID_TO_EMAIL
+      subject: '',
+      name: '',
+      email: '',
+      message: '',
     }),
     [],
   );
@@ -45,9 +46,7 @@ const ContactForm: FC = memo(() => {
         // call to my function
         const response = await fetch('./.netlify/functions/triggerEmail', {
           method: 'POST',
-/*           headers: {
-            'Content-Type': 'application/json',
-          }, */
+          // headers: {'Content-Type': 'application/json',},
           body: JSON.stringify({
             from: "contact@christophernapier.com",
             to: "specialistchris@gmail.com",
@@ -55,6 +54,7 @@ const ContactForm: FC = memo(() => {
             parameters: {
               name: "name hard coded in contact form",
               email: "email hard coded in contact form",
+              message: "message hard coded in contact form",
             },
           }),
         });
