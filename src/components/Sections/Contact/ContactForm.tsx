@@ -54,7 +54,7 @@ const ContactForm: FC = memo(() => {
             parameters: {
               name: "name hard coded in contact form",
               email: "email hard coded in contact form",
-              message: "message hard coded in contact form",
+              message: "message hard coded in contact form"
             },
           }),
         });

@@ -33,14 +33,18 @@ const handler: Handler = async function(event) {
       parameters: {
         name: requestBody.name,
         email: requestBody.email,
-        message: requestBody.message,
+        message: requestBody.message
       },
     }),
   });
 
   return {
     statusCode: 200,
-    body: JSON.stringify("Contact email sent!"),
+    body: JSON.stringify({
+      text: "Contact email sent!",
+      requestBody,
+    }
+    ),
   };
 };
 
