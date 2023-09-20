@@ -25,11 +25,11 @@ const handler: Handler = async function(event) {
     },
     method: "POST",
     body: JSON.stringify({
-      from: requestBody.from,
-      to: requestBody.to,
-      subject: "Email from website",
+      from: "contact@christophernapier.com",
+      to: "christopher.napier@hotmail.com",
+      subject: "trigger email HC subject",
       parameters: {
-        name: requestBody.name
+        name: ""
       },
     }),
   });
