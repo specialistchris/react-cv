@@ -48,8 +48,8 @@ const ContactForm: FC = memo(() => {
           method: 'POST',
           body: JSON.stringify({
             from: "contact@christophernapier.com",
-            to: "christopher.napier@hotmail.com",
-            subject: "email from website contact form",
+            to: "specialistchris@gmail.com",
+            subject: "contact email from cn website",
             parameters: {
               name: data.name,
               email: data.email,

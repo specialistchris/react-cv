@@ -27,9 +27,9 @@ const handler: Handler = async function(event) {
     },
     method: "POST",
     body: JSON.stringify({
-      from: "contact@christophernapier.com",
-      to: "christopher.napier@hotmail.com",
-      subject: "trigger Email HC subject",
+      from: requestBody.from,
+      to: requestBody.to,
+      subject: requestBody.subject,
       parameters: {
         name: requestBody.name,
         email: requestBody.email,
