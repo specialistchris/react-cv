@@ -49,16 +49,17 @@ const ContactForm: FC = memo(() => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ data
-/*             from: "contact@christophernapier.com",
+          body: JSON.stringify({data}),
+/*          from: "contact@christophernapier.com",
             to: "specialistchris@gmail.com",
             subject: "contact email from cn website",
             parameters: {
               name: data.name,
               email: data.email,
               message: data.message,
-            }, */
-          }),
+            }, 
+          }
+          ),*/
         });
 
         if (response.ok) {
