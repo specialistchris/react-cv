@@ -52,7 +52,7 @@ const ContactForm: FC = memo(() => {
           body: JSON.stringify({data}),
 /*          from: "contact@christophernapier.com",
             to: "specialistchris@gmail.com",
-            subject: "contact email from cn website",
+            subject: "contact email ${name} from cn website",
             parameters: {
               name: data.name,
               email: data.email,
@@ -124,68 +124,6 @@ ContactForm.displayName = 'ContactForm';
 export default ContactForm;
 
 
-
-/* 
-const msg = {
-  to: SENDGRID_TO_EMAIL, //specialistchris@gmail.com', // Change to your recipient
-  from: SENDGRID_FROM_EMAIL, //'christopher.napier@hotmail.com', // Change to your verified sender
-  subject: 'Sending with SendGrid is Fun',
-  text: 'and easy to do anywhere, even with Node.js',
-  html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-};
-  .then(() => {
-    console.log('Email sent')
-  })
-  .catch((error) => {
-    console.error(error)
-  }) */
-
-
-
-      /* 
-  const handleSendMessage = useCallback(
-    async (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-
-
-      const client = require('@sendgrid/mail');
-
-
-      const {
-        SENDGRID_API_KEY,
-        SENDGRID_TO_EMAIL,
-        SENDGRID_FROM_EMAIL,
-      } = process.env;
-
-      sgMail.setApiKey(SENDGRID_API_KEY);
-      //sgClient.setApiKey(SENDGRID_API_KEY);
-
-      const msg = {
-        to: SENDGRID_TO_EMAIL,
-        from: SENDGRID_FROM_EMAIL,
-        subject: `New message from ${data.name} (${data.email})`,
-        text: `
-          Dear user,    Here is your email.
-        `,
-        html: `
-          <p>Dear user,</p>    <p>Here is your email.</p>
-        `,
-      };
-
-      sgMail.send(msg);
-      //sgClient.send(msg); 
-
-      console.log('Data to send: ', data);
-    },
-    [data],
-  );
-*/
-
-
-
-
-// import sgMail from '@sendgrid/mail'; //'../../../../functions/sendgrid'
-// const sgMail = require('@sendgrid/mail');
 
 // convoluted sendgrid example!!! =========  https://github.com/bthayes42/portfolio/blob/main/src/components/Sections/Contact/ContactForm.tsx =========
 // https://rosso.codes/blog/send-email-using-netlify-functions-and-sendgrid-api/

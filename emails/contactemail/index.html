@@ -12,10 +12,10 @@
         text-align: center;
       "
     >
-    <h1>{{ name }} contacted</h1>
-    <h2>with email: {{ email }}</h2>
-    <h2>and message: {{ message }}</h2>
-    <div>'{{ name }}' "{{ name }}"" {{ name }} </div>
+    <h1>{{ .name }} contacted</h1>
+    <h2>with email: {{ .email }}</h2>
+    <h2>and message: {{ .message }}</h2>
+    <div>'{{ name }}' "{{ name }}"" {{ name }} {{ .name }}</div>
       <button style="border-radius: 10px;">
         WWW.CHRISTOPHERNAPIER.COM
       </button>
