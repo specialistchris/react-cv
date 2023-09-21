@@ -10,9 +10,6 @@ const handler: Handler = async function(event) {
   }
 
   const requestBody = JSON.parse(event.body) as {
-    //from: string;
-    //to: string;
-    //subject: string;
     reqName: string;
     reqEmail: string;
     reqMessage: string;
@@ -31,9 +28,9 @@ const handler: Handler = async function(event) {
       from: "contact@christophernapier.com",
       subject: "contact email from cn.com",
       parameters: {
-        name: requestBody.reqName, //"nameynamey",
-        email: requestBody.reqEmail,//"emaillly@cn.com", //requestBody.email,
-        message: "messageymassage", //requestBody.message,
+        name: requestBody.reqName, 
+        email: requestBody.reqEmail,
+        message: requestBody.reqMessage,
       },
     }),
   });

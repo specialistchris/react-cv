@@ -7,18 +7,17 @@
   >
     <div
       style="
-        background-color: rgb(171, 255, 248);
+        background-color: rgb(247, 255, 254);
         display: inline-block;
-        text-align: center;
+        text-align: left;
       "
     >
-    <h1>{{ name }} contacted</h1>
-    <h2>with email: {{ email }}</h2>
-    <h2>and message: {{ message }}</h2>
-    <div>'{{ name }}' "{{ name }}"" {{ name }} {{ name }}</div>
-      <button style="border-radius: 10px;">
-        WWW.CHRISTOPHERNAPIER.COM
-      </button>
+    <h1>You have received a new message from: {{ name }} </h1>
+    <h3>{{ message }}</h3>
+    <h2>From: {{ email }}</h2>
+    <button style="border-radius: 20px;">
+      WWW.CHRISTOPHERNAPIER.COM
+    </button>
     </div>
   </body>
 </html>

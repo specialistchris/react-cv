@@ -49,25 +49,16 @@ const ContactForm: FC = memo(() => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({//data}),
-            //from: "contact@christophernapier.com",
-            //to: "specialistchris@gmail.com",
-            //subject: "contact email ${name} from cn website",
-            //parameters: {
+          body: JSON.stringify({
               reqName: data.name,
               reqEmail: data.email,
               reqMessage: data.message,
-            //}, 
-          }
-          ),
+          }),
         });
 
         if (response.ok) {
           const responsedata = await response.json();
           console.log('Response OK. responsedata: ', responsedata);
-          console.log('data name: ', data.name);
-          console.log('data email: ', data.email);
-          console.log('data message: ', data.message);
         } else {
           console.error('Response not OK');
         }
