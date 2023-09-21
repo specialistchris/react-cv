@@ -13,9 +13,9 @@ const handler: Handler = async function(event) {
     //from: string;
     //to: string;
     //subject: string;
-    name: string;
-    email: string;
-    message: string;
+    reqName: string;
+    reqEmail: string;
+    reqMessage: string;
   };
 
   //automatically generated snippet from the email preview
@@ -30,12 +30,9 @@ const handler: Handler = async function(event) {
       to: "specialistchris@gmail.com",
       from: "contact@christophernapier.com",
       subject: "contact email from cn.com",
-      //from: requestBody.from,
-      //to: requestBody.to,
-      //subject: requestBody.subject,
       parameters: {
-        name: requestBody.name, //"nameynamey",
-        email: requestBody.email,//"emaillly@cn.com", //requestBody.email,
+        name: requestBody.reqName, //"nameynamey",
+        email: requestBody.reqEmail,//"emaillly@cn.com", //requestBody.email,
         message: "messageymassage", //requestBody.message,
       },
     }),
