@@ -3,8 +3,8 @@
 import {FC, memo, useCallback, useMemo, useState} from 'react';
 
 export interface FormData {
-  to: string;
-  from: string;
+  //to: string;
+  //from: string;
   name: string;
   email: string;
   message: string;
@@ -13,8 +13,8 @@ export interface FormData {
 const ContactForm: FC = memo(() => {
   const defaultData = useMemo(
     () => ({
-      from: 'contact@christophernapier.com', //SENDGRID_FROM_EMAIL
-      to: '', //SENDGRID_TO_EMAIL
+      //from: 'contact@christophernapier.com', //SENDGRID_FROM_EMAIL
+      //to: '', //SENDGRID_TO_EMAIL
       subject: '',
       name: '',
       email: '',
@@ -46,15 +46,18 @@ const ContactForm: FC = memo(() => {
         // call to my function
         const response = await fetch('./.netlify/functions/triggerEmail', {
           method: 'POST',
-          body: JSON.stringify({
-            from: "contact@christophernapier.com",
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ data
+/*             from: "contact@christophernapier.com",
             to: "specialistchris@gmail.com",
             subject: "contact email from cn website",
             parameters: {
               name: data.name,
               email: data.email,
               message: data.message,
-            },
+            }, */
           }),
         });
 

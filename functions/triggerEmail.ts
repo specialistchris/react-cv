@@ -10,9 +10,9 @@ const handler: Handler = async function(event) {
   }
 
   const requestBody = JSON.parse(event.body) as {
-    from: string;
-    to: string;
-    subject: string;
+    //from: string;
+    //to: string;
+    //subject: string;
     name: string;
     email: string;
     message: string;
@@ -27,12 +27,12 @@ const handler: Handler = async function(event) {
     },
     method: "POST",
     body: JSON.stringify({
-      from: requestBody.from,
-      to: requestBody.to,
-      subject: requestBody.subject,
-      name: requestBody.name,
-      email: requestBody.email,
-      message: requestBody.message,
+      to: "specialistchris@gmail.com",
+      from: "contact@christophernapier.com",
+      subject: "contact email from cn.com",
+      //from: requestBody.from,
+      //to: requestBody.to,
+      //subject: requestBody.subject,
       parameters: {
         name: requestBody.name,
         email: requestBody.email,
