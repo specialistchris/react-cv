@@ -15,7 +15,7 @@ const ContactForm: FC = memo(() => {
     () => ({
       //from: 'contact@christophernapier.com', //SENDGRID_FROM_EMAIL
       //to: '', //SENDGRID_TO_EMAIL
-      subject: '',
+      //subject: '',
       name: '',
       email: '',
       message: '',

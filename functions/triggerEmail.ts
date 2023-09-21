@@ -33,11 +33,11 @@ const handler: Handler = async function(event) {
       //from: requestBody.from,
       //to: requestBody.to,
       //subject: requestBody.subject,
-      parameters: {
-        name: requestBody.name,
-        email: requestBody.email,
-        message: requestBody.message
-      },
+      //parameters: {
+        name: "nameynamey", //requestBody.name,
+        email: "emaillly@cn.com", //requestBody.email,
+        message: "messageymassage", //requestBody.message,
+      //},
     }),
   });
 
