@@ -65,6 +65,9 @@ const ContactForm: FC = memo(() => {
         if (response.ok) {
           const responsedata = await response.json();
           console.log('Response OK. responsedata: ', responsedata);
+          console.log('data name: ', data.name);
+          console.log('data email: ', data.email);
+          console.log('data message: ', data.message);
         } else {
           console.error('Response not OK');
         }
