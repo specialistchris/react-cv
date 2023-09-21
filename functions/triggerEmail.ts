@@ -34,8 +34,8 @@ const handler: Handler = async function(event) {
       //to: requestBody.to,
       //subject: requestBody.subject,
       parameters: {
-        name: "nameynamey", //requestBody.name,
-        email: "emaillly@cn.com", //requestBody.email,
+        name: requestBody.name, //"nameynamey",
+        email: requestBody.email,//"emaillly@cn.com", //requestBody.email,
         message: "messageymassage", //requestBody.message,
       },
     }),
