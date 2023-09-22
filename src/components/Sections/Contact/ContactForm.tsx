@@ -3,8 +3,6 @@
 import {FC, memo, useCallback, useMemo, useState} from 'react';
 
 export interface FormData {
-  //to: string;
-  //from: string;
   name: string;
   email: string;
   message: string;
@@ -13,9 +11,6 @@ export interface FormData {
 const ContactForm: FC = memo(() => {
   const defaultData = useMemo(
     () => ({
-      //from: 'contact@christophernapier.com', //SENDGRID_FROM_EMAIL
-      //to: '', //SENDGRID_TO_EMAIL
-      //subject: '',
       name: '',
       email: '',
       message: '',
@@ -59,6 +54,7 @@ const ContactForm: FC = memo(() => {
         if (response.ok) {
           const responsedata = await response.json();
           console.log('Response OK. responsedata: ', responsedata);
+          alert("Form Submitted Successfully");
         } else {
           console.error('Response not OK');
         }
