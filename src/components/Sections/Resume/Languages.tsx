@@ -1,20 +1,34 @@
-import {FC, memo, useMemo} from 'react';
+import {FC, memo, PropsWithChildren} from 'react';
+import {Language as LanguageType, LanguageList as languageListType} from '../../../data/dataDef';
 
-import {Language as LanguageType} from '../../../data/dataDef';
 
-export const Languages: FC<{language: LanguageType}> = memo(({language}) => {
-  const {name, level, max = 10} = language;
-  const percentage = useMemo(() => Math.round((level / max) * 100), [level, max]);
+export const LanguageList: FC<PropsWithChildren<{languageList: languageListType}>> = memo(({languageList}) => {
+
+  const {name, languages} = languageList;
 
   return (
     <div className="flex flex-col">
-      <span className="ml-2 text-sm font-medium">{name}</span>
-      <div className="h-5 w-full overflow-hidden rounded-full bg-neutral-300">
-        <div className="h-full rounded-full bg-orange-400" style={{width: `${percentage}%`}} />
-        
-      </div>
+      <span className="text-center text-lg font-bold">{name}</span> 
+        {languages.map((language, index) => (
+          <Language key={`${language.label}-${index}`} language={language} />
+      ))}
     </div>
   );
 });
 
-Languages.displayName = 'Languages';
+LanguageList.displayName = 'Languages';
+
+export const Language: FC<{language: LanguageType}> = memo(({language}) => {
+
+  const {label, text, Icon} = language;
+
+  return (
+    <div>
+      {Icon && <Icon className="h-5 w-5" />}
+      <span className="text-sm font-bold">{label}:</span>
+      <span className="text-sm">{text}</span>
+    </div>
+  );
+});
+
+Language.displayName = 'Language';

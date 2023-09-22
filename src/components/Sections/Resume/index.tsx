@@ -1,10 +1,10 @@
 import {FC, memo} from 'react';
 
-import {education, experience, SectionId, skills} from '../../../data/data';
+import {education, experience, SectionId, skills, languages} from '../../../data/data';
 import Section from '../../Layout/Section';
 import ResumeSection from './ResumeSection';
 import {SkillGroup} from './Skills';
-//import {Languages} from './Languages';
+import {LanguageList} from './Languages';
 import TimelineItem from './TimelineItem';
 
 const Resume: FC = memo(() => {
@@ -30,9 +30,9 @@ const Resume: FC = memo(() => {
         </ResumeSection>
         <ResumeSection title="Languages">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-{/*           {languages.map((language, index) => (
-            <Languages key={`${language.name}-${index}`} language={language} />
-          ))} */}
+            {languages.map((languagelist, index) => (
+              <LanguageList key={`${languagelist.name}-${index}`} languageList={languagelist} />
+            ))}
           </div>
         </ResumeSection>
       </div>

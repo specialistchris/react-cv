@@ -62,10 +62,13 @@ export interface Stat {
  * Language section
  */
 export interface Language {
+  label: string;
+  text: string;
+  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
+}
+export interface LanguageList {
   name: string;
-  level: number;
-  max?: number;
-  //Icon: FC<IconProps>;
+  languages: Language[];
 }
 
 /**

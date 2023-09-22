@@ -34,6 +34,7 @@ import {
   ContactType,
   Hero,
   HomepageMeta,
+  LanguageList,
   PortfolioItem,
   SkillGroup,
   Social,
@@ -202,6 +203,21 @@ export const skills: SkillGroup[] = [
         name: 'Automotive',
         level: 6,
       },
+    ],
+  },
+];
+
+/**
+ * Language section
+ */
+export const languages: LanguageList[] = [
+  {
+    name: 'Languages',
+    languages:[
+      {label: 'English', text: 'Switzerland', Icon: MapIcon},
+      {label: 'German', text: '39', Icon: CalendarIcon},
+      {label: 'Portuguese', text: 'NZ / US / CH', Icon: FlagIcon},
+      {label: 'Japanese', text: 'Karate, Cats, Reading', Icon: SparklesIcon},
     ],
   },
 ];
