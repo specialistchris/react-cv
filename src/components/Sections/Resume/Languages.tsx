@@ -1,6 +1,5 @@
 import {FC, memo, PropsWithChildren} from 'react';
-import {Language as LanguageType} from '../../../data/dataDef';
-import {LanguageList as LanguageListType} from '../../../data/dataDef';
+import {Language as LanguageType, LanguageList as LanguageListType} from '../../../data/dataDef';
 
 
 export const LanguageList: FC<PropsWithChildren<{languageList: LanguageListType}>> = memo(({languageList}) => {

@@ -1,11 +1,10 @@
 import {FC, memo} from 'react';
-
-import {education, experience, SectionId, skills, languages} from '../../../data/data';
-import Section from '../../Layout/Section';
+import {LanguageList} from './Languages';
 import ResumeSection from './ResumeSection';
 import {SkillGroup} from './Skills';
-import {LanguageList} from './Languages';
 import TimelineItem from './TimelineItem';
+import Section from '../../Layout/Section';
+import {education, experience, languages, SectionId, skills} from '../../../data/data';
 
 const Resume: FC = memo(() => {
   return (
