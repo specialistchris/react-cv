@@ -59,9 +59,18 @@ export interface Stat {
 }
 
 /**
+ * Language section
+ */
+export interface Language {
+  name: string;
+  level: number;
+  max?: number;
+  //Icon: FC<IconProps>;
+}
+
+/**
  * Skills section
  */
-
 export interface Skill {
   name: string;
   level: number;

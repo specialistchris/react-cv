@@ -8,11 +8,11 @@ import {
   SparklesIcon,
 } from '@heroicons/react/24/outline';
 
-import GithubIcon from '../components/Icon/GithubIcon';
-import InstagramIcon from '../components/Icon/InstagramIcon';
+// import GithubIcon from '../components/Icon/GithubIcon';
+// import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
-import TwitterIcon from '../components/Icon/TwitterIcon';
+// import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
+// import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
@@ -446,8 +446,8 @@ export const testimonial: TestimonialSection = {
  */
 
 export const contact: ContactSection = {
-  headerText: 'Get in touch with me.',
-  description: 'Email works. Not so active elsewhere.',
+  headerText: 'Get in touch.',
+  description: 'Email works.',
   items: [
     {
       type: ContactType.Email,
@@ -459,7 +459,7 @@ export const contact: ContactSection = {
       text: 'Basel, Switzerland',
       href: 'https://www.google.ch/maps/place/Basel/@47.55465,7.5532046,13z',
     },
-    {
+/*     {
       type: ContactType.Instagram,
       text: '@instagram',
       href: 'https://www.instagram.com/',
@@ -468,7 +468,7 @@ export const contact: ContactSection = {
       type: ContactType.Github,
       text: 'github',
       href: 'https://github.com/',
-    },
+    }, */
   ],
 };
 
@@ -476,9 +476,9 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/'},
   {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/christophernapier/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/'},
+  // {label: 'Github', Icon: GithubIcon, href: 'https://github.com/'},
+  // {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/'},
+  // {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/'},
+  // {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/'},
 ];
