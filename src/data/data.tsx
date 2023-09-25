@@ -210,17 +210,17 @@ export const skills: SkillGroup[] = [
 /**
  * Language section
  */
-export const languages: LanguageList[] = [
-  {
+export const languagelist: LanguageList = {
     name: 'Languages',
     languages:[
-      {label: 'English', text: 'Switzerland', Icon: MapIcon},
-      {label: 'German', text: '39', Icon: CalendarIcon},
-      {label: 'Portuguese', text: 'NZ / US / CH', Icon: FlagIcon},
-      {label: 'Japanese', text: 'Karate, Cats, Reading', Icon: SparklesIcon},
+      {label: 'English', text: 'Native', Icon: MapIcon},
+      {label: 'German', text: 'Advanced - C1 level', Icon: CalendarIcon},
+      {label: 'Portuguese', text: 'Ïntermediate', Icon: FlagIcon},
+      {label: 'Japanese', text: 'Beginner', Icon: SparklesIcon},
     ],
-  },
-];
+  };
+
+
 
 /**
  * Portfolio section
