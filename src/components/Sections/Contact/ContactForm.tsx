@@ -20,6 +20,12 @@ const ContactForm: FC = memo(() => {
 
   const [data, setData] = useState<FormData>(defaultData);
 
+  const [formValues, resetFormValues] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
   const onChange = useCallback(
     <T extends HTMLInputElement | HTMLTextAreaElement>(event: React.ChangeEvent<T>): void => {
       const {name, value} = event.target;
@@ -54,17 +60,17 @@ const ContactForm: FC = memo(() => {
           const responsedata = await response.json();
           console.log('Response OK. responsedata: ', responsedata);
           alert("Form Submitted Successfully");
+          resetFormValues({
+            name: '',
+            email: '',
+            message: '',
+          });
         } else {
           console.error('Response not OK');
         }
       } catch (error) {
         console.error('Failed to send email:', error);
       }
-      setData({
-        name: '',
-        email: '',
-        message: '',
-      });
     },
     [data],
   );
@@ -82,6 +88,7 @@ const ContactForm: FC = memo(() => {
         placeholder="Name" 
         required 
         type="text" 
+        value={formValues.name}
       />
       <input
         autoComplete="email"
@@ -92,6 +99,7 @@ const ContactForm: FC = memo(() => {
         placeholder="Email"
         required
         type="email"
+        value={formValues.email}
       />
       <textarea
         className={inputClasses}
@@ -102,6 +110,7 @@ const ContactForm: FC = memo(() => {
         placeholder="Message"
         required
         rows={6}
+        value={formValues.message}
       />
       <button
         aria-label="Submit contact form"
