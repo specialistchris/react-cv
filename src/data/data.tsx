@@ -41,6 +41,7 @@ import {
   TestimonialSection,
   TimelineItem,
 } from './dataDef';
+import NZFlagIcon from '../components/Icon/NZFlagIcon';
 
 /**
  * Page meta data
@@ -57,7 +58,7 @@ export const SectionId = {
   Hero: 'hero',
   About: 'about',
   Contact: 'contact',
-  Portfolio: 'portfolio',
+  Interests: 'interests',
   Resume: 'resume',
   Skills: 'skills',
   Stats: 'stats',
@@ -121,27 +122,6 @@ export const aboutData: About = {
  * Skills section
  */
 export const skills: SkillGroup[] = [
-  {
-    name: 'Spoken languages',
-    skills: [
-      {
-        name: 'English',
-        level: 10,
-      },
-      {
-        name: 'German',
-        level: 8,
-      },
-      {
-        name: 'Portuguese',
-        level: 5,
-      },
-      {
-        name: 'Japanese',
-        level: 2,
-      },
-    ],
-  },
   {
     name: 'Project Management',
     skills: [
@@ -215,7 +195,7 @@ export const languagelist: LanguageList = {
     languages:[
       {label: 'English', text: 'Native', Icon: MapIcon},
       {label: 'German', text: 'Advanced - C1 level', Icon: CalendarIcon},
-      {label: 'Portuguese', text: 'Ïntermediate', Icon: FlagIcon},
+      {label: 'Portuguese', text: 'Intermediate', Icon: FlagIcon},
       {label: 'Japanese', text: 'Beginner', Icon: SparklesIcon},
     ],
   };
@@ -493,7 +473,7 @@ export const contact: ContactSection = {
  */
 export const socialLinks: Social[] = [
   {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/christophernapier/'},
-  // {label: 'Github', Icon: GithubIcon, href: 'https://github.com/'},
+  {label: 'TestNZ', Icon: NZFlagIcon, href: 'https://github.com/'},
   // {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/'},
   // {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/'},
   // {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/'},

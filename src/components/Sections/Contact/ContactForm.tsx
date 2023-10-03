@@ -33,8 +33,7 @@ const ContactForm: FC = memo(() => {
 
   const handleFormMessage = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      
+      event.preventDefault();      
       try {
         console.log('Trying with data: ', data);
         
@@ -61,6 +60,11 @@ const ContactForm: FC = memo(() => {
       } catch (error) {
         console.error('Failed to send email:', error);
       }
+      setData({
+        name: '',
+        email: '',
+        message: '',
+      });
     },
     [data],
   );
