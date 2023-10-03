@@ -11,6 +11,7 @@ import {
 // import GithubIcon from '../components/Icon/GithubIcon';
 // import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
+import NZFlagIcon from '../components/Icon/NZFlagIcon';
 // import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 // import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
@@ -41,7 +42,6 @@ import {
   TestimonialSection,
   TimelineItem,
 } from './dataDef';
-import NZFlagIcon from '../components/Icon/NZFlagIcon';
 
 /**
  * Page meta data
