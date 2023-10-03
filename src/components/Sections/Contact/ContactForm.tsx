@@ -32,6 +32,7 @@ const ContactForm: FC = memo(() => {
 
       const fieldData: Partial<FormData> = {[name]: value};
 
+      resetFormValues({ ...formValues, [name]: value})
       setData({...data, ...fieldData});
     },
     [data],
