@@ -20,7 +20,7 @@ const ContactForm: FC = memo(() => {
 
   const [data, setData] = useState<FormData>(defaultData);
 
-  const [formValues, resetFormValues] = useState<FormData>({
+  const [formValues, updateFormValues] = useState<FormData>({
     name: "",
     email: "",
     message: ""
@@ -32,7 +32,7 @@ const ContactForm: FC = memo(() => {
 
       const fieldData: Partial<FormData> = {[name]: value};
 
-      resetFormValues(formValues => ({...formValues, [name]: value}));
+      updateFormValues(formValues => ({...formValues, [name]: value}));
       setData({...data, ...fieldData});
     },
     [data],
@@ -61,7 +61,7 @@ const ContactForm: FC = memo(() => {
           const responsedata = await response.json();
           console.log('Response OK. responsedata: ', responsedata);
           alert("Form Submitted Successfully");
-          resetFormValues({
+          updateFormValues({
             name: '',
             email: '',
             message: '',

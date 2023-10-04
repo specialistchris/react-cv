@@ -219,10 +219,10 @@ export const portfolioItems: PortfolioItem[] = [
     image: porfolioImage2,
   },
   {
-    title: 'Virtual Reality',
-    description: 'I like the potential of VR. I follow the news.',
+    title: 'Photograpy',
+    description: 'Budding photographer.',
     url: 'https://timbaker.me',
-    image: porfolioImage3,
+    image: porfolioImage12,
   },
   {
     title: 'Vertical Farming',
@@ -273,10 +273,10 @@ export const portfolioItems: PortfolioItem[] = [
     image: porfolioImage11,
   },
   {
-    title: 'Photograpy',
-    description: 'Budding photographer.',
+    title: 'Virtual Reality',
+    description: 'I like the potential of VR. I follow the news.',
     url: 'https://timbaker.me',
-    image: porfolioImage12,
+    image: porfolioImage3,
   },
 ];
 

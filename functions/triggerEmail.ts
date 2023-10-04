@@ -35,6 +35,23 @@ const handler: Handler = async function(event) {
     }),
   });
 
+  await fetch(`${process.env.URL}/.netlify/functions/emails/confirmemail`, {
+    headers: {
+      "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET as string,
+    },
+    method: "POST",
+    body: JSON.stringify({
+      to: requestBody.reqEmail,
+      from: "contact@christophernapier.com",
+      subject: `christophernapier.com - message sent`,
+      parameters: {
+        name: requestBody.reqName, 
+        email: requestBody.reqEmail,
+        message: requestBody.reqMessage,
+      },
+    }),
+  });
+
   return {
     statusCode: 200,
     body: JSON.stringify({
