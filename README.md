@@ -23,7 +23,6 @@
 
 ### 🎉 TODO
 * fix language icons
-* remove old github
 * add cp page
 * "testimonals" -> quotes
 * about me update
