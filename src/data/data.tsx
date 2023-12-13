@@ -473,7 +473,7 @@ export const contact: ContactSection = {
  */
 export const socialLinks: Social[] = [
   {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/christophernapier/'},
-  {label: 'TestNZ', Icon: NZFlagIcon, href: 'https://github.com/'},
+  // {label: 'TestNZ', Icon: NZFlagIcon, href: 'https://github.com/'},
   // {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/'},
   // {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/'},
   // {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/'},
