@@ -24,7 +24,6 @@
 ### 🎉 TODO
 * fix language icons
 * add cp page
-* "testimonals" -> quotes
 * about me update
 
 
