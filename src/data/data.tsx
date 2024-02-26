@@ -81,7 +81,7 @@ export const heroData: Hero = {
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         I don't have free time, I have a <strong className="text-stone-100">family</strong>,
-        and, whenever I can, I like to <strong className="text-stone-100">kaizen</strong>.
+        and, whenever I can, I like to practice <strong className="text-stone-100">relentless self-improvemment</strong>.
       </p>
     </>
   ),
@@ -428,6 +428,11 @@ export const testimonial: TestimonialSection = {
       name: 'Ghandi',
       text: 'Action expresses priorities',
       image: 'https://www.droominfo.nl/img/beroemd/ghandi.jpg',
+    },
+    {
+      name: 'Bruce Lee',
+      text: 'It is not daily increase but daily decrease, hack away the unessential.',
+      image: 'https://img.frasesfamosas.com.br/images/thumb_person-bruce-lee.140x140_q95_box-18,38,410,430.jpg',
     },
     {
       name: 'Dale Carnegie',
