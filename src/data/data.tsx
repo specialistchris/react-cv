@@ -11,7 +11,7 @@ import {
 // import GithubIcon from '../components/Icon/GithubIcon';
 // import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-// import NZFlagIcon from '../components/Icon/NZFlagIcon';
+import NZFlagIcon from '../components/Icon/NZFlagIcon';
 // import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 // import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
@@ -81,7 +81,7 @@ export const heroData: Hero = {
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         I don't have free time, I have a <strong className="text-stone-100">family</strong>,
-        and, whenever I can, I like to practice <strong className="text-stone-100">relentless self-improvemment</strong>.
+        but whenever I can I like to practice <strong className="text-stone-100">relentless self-improvement</strong>.
       </p>
     </>
   ),
@@ -193,7 +193,7 @@ export const skills: SkillGroup[] = [
 export const languagelist: LanguageList = {
     name: 'Languages',
     languages:[
-      {label: 'English', text: 'Native', Icon: MapIcon},
+      {label: 'English', text: 'Native', Icon: NZFlagIcon},
       {label: 'German', text: 'Advanced - C1 level', Icon: CalendarIcon},
       {label: 'Portuguese', text: 'Intermediate', Icon: FlagIcon},
       {label: 'Japanese', text: 'Beginner', Icon: SparklesIcon},

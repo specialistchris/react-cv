@@ -64,7 +64,8 @@ export interface Stat {
 export interface Language {
   label: string;
   text: string;
-  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
+  // Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
+  Icon: FC<IconProps>;
 }
 export interface LanguageList {
   name: string;
