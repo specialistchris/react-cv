@@ -11,7 +11,7 @@ import {
 // import GithubIcon from '../components/Icon/GithubIcon';
 // import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import NZFlagIcon from '../components/Icon/NZFlagIcon';
+// import NZFlagIcon from '../components/Icon/NZFlagIcon';
 // import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 // import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
@@ -193,10 +193,10 @@ export const skills: SkillGroup[] = [
 export const languagelist: LanguageList = {
     name: 'Languages',
     languages:[
-      {label: 'English', text: 'Native', Icon: NZFlagIcon},
-      {label: 'German', text: 'Advanced - C1 level', Icon: CalendarIcon},
+      {label: 'English', text: 'Native', Icon: FlagIcon},
+      {label: 'German', text: 'Advanced - C1 level', Icon: FlagIcon},
       {label: 'Portuguese', text: 'Intermediate', Icon: FlagIcon},
-      {label: 'Japanese', text: 'Beginner', Icon: SparklesIcon},
+      {label: 'Japanese', text: 'Beginner', Icon: FlagIcon},
     ],
   };
 
