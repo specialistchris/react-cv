@@ -30,9 +30,9 @@ const Resume: FC = memo(() => {
           </div>
         </ResumeSection>
         <ResumeSection title="Languages">
-          <div className="flex flex-col gap-y-2">
+          {/* <div className="flex flex-col gap-y-2">
             <p className="prose prose-sm text-gray-300 sm:prose-base">{name}</p>
-          </div>
+          </div> */}
             <ul className="grid grid-cols-1 gap-4">
               {languages.map(({label, text, Icon}, idx) => (
                 <li className="col-span-1 flex  items-start gap-x-2" key={idx}>
