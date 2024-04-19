@@ -262,7 +262,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     title: 'Electric Cars',
-    description: 'Definitely the future. Would love to by more hands-on myself.',
+    description: 'Definitely the future. Would love to be more hands-on myself.',
     url: 'https://timbaker.me',
     image: porfolioImage10,
   },
