@@ -24,11 +24,11 @@ export default function Circle({diameter, background, child, border, fillRatio =
     }
 
     const style = {
-        display: "flex¨",
+        display: "flex",
         width: diameter,
         height: diameter,
         borderRadius: "50%",
-        alignItems: "cen^ter",
+        alignItems: "center",
         justifyContent: "center",
         border,
         ...bg
