@@ -8,25 +8,23 @@ import {
   SparklesIcon,
 } from '@heroicons/react/24/outline';
 
-// import GithubIcon from '../components/Icon/GithubIcon';
-// import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import NZFlagIcon from '../components/Icon/NZFlagIcon';
 // import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 // import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
-import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
-import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
-import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
-import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
-import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
-import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
-import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
-import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
-import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
-import porfolioImage12 from '../images/portfolio/portfolio-12.jpg';
+import portfolioImage1 from '../images/portfolio/portfolio-1.jpg';
+import portfolioImage2 from '../images/portfolio/portfolio-2.jpg';
+import portfolioImage3 from '../images/portfolio/portfolio-3.jpg';
+import portfolioImage4 from '../images/portfolio/portfolio-4.jpg';
+import portfolioImage5 from '../images/portfolio/portfolio-5.jpg';
+import portfolioImage6 from '../images/portfolio/portfolio-6.jpg';
+import portfolioImage7 from '../images/portfolio/portfolio-7.jpg';
+import portfolioImage8 from '../images/portfolio/portfolio-8.jpg';
+import portfolioImage9 from '../images/portfolio/portfolio-9.jpg';
+import portfolioImage10 from '../images/portfolio/portfolio-10.jpg';
+import portfolioImage11 from '../images/portfolio/portfolio-11.jpg';
+import portfolioImage12 from '../images/portfolio/portfolio-12.jpg';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
 import {
@@ -210,73 +208,73 @@ export const portfolioItems: PortfolioItem[] = [
     title: 'DIY',
     description: 'I am a project manager. I always have a project on the go. This is also true at home.',
     url: 'https://timbaker.me',
-    image: porfolioImage1,
+    image: portfolioImage1,
   },
   {
     title: 'Wireless',
     description: 'CCNP qualified once, I still love wireless communication.',
     url: 'https://timbaker.me',
-    image: porfolioImage2,
+    image: portfolioImage2,
   },
   {
     title: 'Photograpy',
     description: 'Budding photographer.',
     url: 'https://timbaker.me',
-    image: porfolioImage12,
+    image: portfolioImage12,
   },
   {
     title: 'Vertical Farming',
     description: 'This is my retirement plan. Would love to own a fully automated vertical farm. Or ten.',
     url: 'https://timbaker.me',
-    image: porfolioImage4,
+    image: portfolioImage4,
   },
   {
     title: 'Skateboarding',
     description: 'My current personal challenge - learn to skateboard.',
     url: 'https://timbaker.me',
-    image: porfolioImage5,
+    image: portfolioImage5,
   },
   {
     title: 'Robotics',
     description: 'Since my university days, I have been playing with robots.',
     url: 'https://timbaker.me',
-    image: porfolioImage6,
+    image: portfolioImage6,
   },
   {
     title: 'Real Estate',
     description: 'My passive income experiment.',
     url: 'https://timbaker.me',
-    image: porfolioImage7,
+    image: portfolioImage7,
   },
   {
     title: 'Gardening',
     description: 'Total amateur but really enjoy getting my hands dirty.',
     url: 'https://timbaker.me',
-    image: porfolioImage8,
+    image: portfolioImage8,
   },
   {
     title: 'Technology',
     description: 'Subscribed to all the newsletters.',
     url: 'https://timbaker.me',
-    image: porfolioImage9,
+    image: portfolioImage9,
   },
   {
     title: 'Electric Cars',
     description: 'Definitely the future. Would love to be more hands-on myself.',
     url: 'https://timbaker.me',
-    image: porfolioImage10,
+    image: portfolioImage10,
   },
   {
     title: 'Martial Arts',
     description: 'Bit of this, bit of that. Currently learning Karate.',
     url: 'https://timbaker.me',
-    image: porfolioImage11,
+    image: portfolioImage11,
   },
   {
     title: 'Virtual Reality',
     description: 'I like the potential of VR. I follow the news.',
     url: 'https://timbaker.me',
-    image: porfolioImage3,
+    image: portfolioImage3,
   },
 ];
 

@@ -6398,7 +6398,7 @@ promise-inflight@^1.0.1:
   resolved "https://registry.npmjs.org/promise-inflight/-/promise-inflight-1.0.1.tgz"
   integrity sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==
 
-prop-types@^15.5.10, prop-types@^15.8.1:
+prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -6547,13 +6547,6 @@ react-flag-kit@^1.1.1:
   resolved "https://registry.npmjs.org/react-flag-kit/-/react-flag-kit-1.1.1.tgz"
   integrity sha512-sgelSGSl0HxSL8lMM1TEBidgiGV2hOi+GaLNKeg10aBnL07vpwKvmfILlc1SzOdVyH48NElFyMj4NQn8F+/FHw==
 
-react-flags@^0.1.18:
-  version "0.1.18"
-  resolved "https://registry.npmjs.org/react-flags/-/react-flags-0.1.18.tgz"
-  integrity sha512-fa8D6DIZS6DWRqLcmKGIHVT13r4viHAfIRth9cFO7cDyxEPfTBbZei6p0Xeao6of4C/K4XU/j35aMjPC15ePIg==
-  dependencies:
-    prop-types "^15.5.10"
-
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
@@ -6574,7 +6567,7 @@ react-router@6.15.0:
   dependencies:
     "@remix-run/router" "1.8.0"
 
-"react@^16 || ^17 || ^18", "react@^16.6.0 || ^17.0.0 || ^18.0.0", react@^18.2.0, "react@>= 16", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", react@>=16.8, "react@0.13 - 16.x":
+"react@^16 || ^17 || ^18", "react@^16.6.0 || ^17.0.0 || ^18.0.0", react@^18.2.0, "react@>= 16", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", react@>=16.8:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
