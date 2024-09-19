@@ -10,7 +10,8 @@ import InstagramIcon from '../../Icon/InstagramIcon';
 import LinkedInIcon from '../../Icon/LinkedInIcon';
 import TwitterIcon from '../../Icon/TwitterIcon';
 import Section from '../../Layout/Section';
-import ContactForm from './ContactForm';
+// import ContactForm from './ContactForm';
+import FeedbackForm from './FeedbackForm';
 
 const ContactValueMap: Record<ContactType, ContactValue> = {
   [ContactType.Email]: {Icon: EnvelopeIcon, srLabel: 'Email'},
@@ -34,7 +35,7 @@ const Contact: FC = memo(() => {
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="order-2 col-span-1 md:order-1 ">
-            <ContactForm />
+            <FeedbackForm />
           </div>
           <div className="order-1 col-span-1 flex flex-col gap-y-4 md:order-2">
             <p className="prose leading-6 text-neutral-300">{description}</p>
