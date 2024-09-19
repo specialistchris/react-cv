@@ -1,8 +1,12 @@
+import React, { FC, memo } from 'react';
 import classNames from 'classnames';
 import Image from 'next/image';
 
 import Section from '../Layout/Section';
 import Socials from '../Socials';
+import { heroData } from '../../data/heroData'; // Assuming heroData is imported from a data file
+import { SectionId } from '../../data/sections'; // Assuming SectionId is imported from a data file
+import { ChevronDownIcon } from '@heroicons/react/solid'; // Assuming ChevronDownIcon is imported from heroicons
 
 const Hero: FC = memo(() => {
   const { imageSrc, name, description, actions } = heroData;
