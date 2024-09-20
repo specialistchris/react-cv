@@ -27,7 +27,7 @@ const FeedbackForm: FC = memo(() =>  {
         name: '',
         email: '',
         message: '',
-        form: ''
+        form: 'feedback'
         }),
         [],
     );
@@ -38,7 +38,7 @@ const FeedbackForm: FC = memo(() =>  {
         name: "",
         email: "",
         message: "",
-        form: ""
+        form: "feedback"
     });
 
     const onChange = useCallback(
@@ -83,7 +83,7 @@ const FeedbackForm: FC = memo(() =>  {
                   name: '',
                   email: '',
                   message: '',
-                  form: '',
+                  form: 'feedback',
                 });
             } else {
                 setStatus('error');
