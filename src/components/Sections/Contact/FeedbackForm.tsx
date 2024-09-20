@@ -2,7 +2,7 @@
 import React, {FC, FormEvent, memo, useCallback, useMemo, useState} from 'react';
 
 // Define the Status type
-type Status = 'pending' | 'ok' | 'error' | null;
+// type Status = 'pending' | 'ok' | 'error' | null;
 
 export interface FormData {
     //form: string;
@@ -16,7 +16,7 @@ const FeedbackForm: FC = memo(() =>  {
 
     // const [status, setStatus] = useState<Status>(null);
 
-    const [error, setError] = useState<string | null>(null);
+    // const [error, setError] = useState<string | null>(null);
 
     const inputClasses =
     'bg-neutral-700 border-0 focus:border-0 focus:outline-none focus:ring-1 focus:ring-orange-600 rounded-md placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm';
@@ -58,7 +58,7 @@ const FeedbackForm: FC = memo(() =>  {
         try {
             console.log('Trying with data: ', data);
             // setStatus('pending');
-            setError(null);
+            // setError(null);
             // const myForm = event.target as HTMLFormElement;
             // const formData = new FormData(myForm);
             // const formData = data;
