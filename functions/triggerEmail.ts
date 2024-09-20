@@ -2,12 +2,17 @@ import type {Handler} from "@netlify/functions";
 import fetch from "node-fetch";
 
 const handler: Handler = async function(event) {
+  
+
   if (event.body === null) {
+    console.log('Handler function EMPTY event');
     return {
       statusCode: 400,
       body: JSON.stringify("Payload required"),
     };
   }
+  
+  console.log('Handler function running with event ', event);
 
   const requestBody = JSON.parse(event.body) as {
     reqName: string;
@@ -15,8 +20,8 @@ const handler: Handler = async function(event) {
     reqMessage: string;
   };
 
-  //automatically generated snippet from the email preview
-  //sends a request to an email handler for a subscribed email
+  // automatically generated snippet from the email preview
+  // sends a request to an email handler for a subscribed email
   // template name
   await fetch(`${process.env.URL}/.netlify/functions/emails/contactemail`, {
     headers: {

@@ -56,7 +56,7 @@ const FeedbackForm: FC = memo(() =>  {
     const handleFormSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         try {
-            console.log('Trying with data: ', data);
+            console.log('Handle for submit with data: ', data);
             // setStatus('pending');
             // setError(null);
             // const myForm = event.target as HTMLFormElement;
