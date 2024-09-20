@@ -8,6 +8,7 @@ export interface FormData {
     name: string;
     email: string;
     message: string;
+    form: string;
   };
 
 
@@ -26,6 +27,7 @@ const FeedbackForm: FC = memo(() =>  {
         name: '',
         email: '',
         message: '',
+        form: ''
         }),
         [],
     );
@@ -35,7 +37,8 @@ const FeedbackForm: FC = memo(() =>  {
     const [formValues, updateFormValues] = useState<FormData>({
         name: "",
         email: "",
-        message: ""
+        message: "",
+        form: ""
     });
 
     const onChange = useCallback(
@@ -62,8 +65,8 @@ const FeedbackForm: FC = memo(() =>  {
             const res = await fetch('/__forms.html', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                body: new URLSearchParams("form-name: feedback" + data as any).toString(),
-                // body: new URLSearchParams(data as any).toString()
+                // body: new URLSearchParams("form-name: feedback" + data as any).toString(),
+                body: new URLSearchParams(data as any).toString()
             /* body: JSON.stringify({
                 reqFormName: "feedback",
                 reqName: data.name,
@@ -80,6 +83,7 @@ const FeedbackForm: FC = memo(() =>  {
                   name: '',
                   email: '',
                   message: '',
+                  form: '',
                 });
             } else {
                 setStatus('error');
@@ -97,7 +101,7 @@ const FeedbackForm: FC = memo(() =>  {
         // <form className="grid min-h-[320px] grid-cols-1 gap-y-4" data-netlify="true" method="POST" onSubmit={handleFormSubmit}>
         <form className="grid min-h-[320px] grid-cols-1 gap-y-4" name="feedback" onSubmit={handleFormSubmit}>
             <input 
-                name="form-name" 
+                name="form" 
                 type="hidden"
                 value="feedback"
             />
