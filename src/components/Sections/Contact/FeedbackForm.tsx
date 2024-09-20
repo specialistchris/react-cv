@@ -5,10 +5,10 @@ import React, {FC, FormEvent, memo, useCallback, useMemo, useState} from 'react'
 type Status = 'pending' | 'ok' | 'error' | null;
 
 export interface FormData {
+    //form: string;
     name: string;
     email: string;
     message: string;
-    form: string;
   };
 
 
@@ -24,10 +24,10 @@ const FeedbackForm: FC = memo(() =>  {
 
     const defaultData = useMemo(
         () => ({
+        //form-name: 'feedback',
         name: '',
         email: '',
-        message: '',
-        form: 'feedback'
+        message: ''
         }),
         [],
     );
@@ -35,10 +35,10 @@ const FeedbackForm: FC = memo(() =>  {
     const [data, setData] = useState<FormData>(defaultData);
     
     const [formValues, updateFormValues] = useState<FormData>({
+        //form-name: "feedback",
         name: "",
         email: "",
-        message: "",
-        form: "feedback"
+        message: ""
     });
 
     const onChange = useCallback(
@@ -66,13 +66,7 @@ const FeedbackForm: FC = memo(() =>  {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 // body: new URLSearchParams("form-name: feedback" + data as any).toString(),
-                body: new URLSearchParams(data as any).toString()
-            /* body: JSON.stringify({
-                reqFormName: "feedback",
-                reqName: data.name,
-                reqEmail: data.email,
-                reqMessage: data.message,
-            }),*/
+                body: new URLSearchParams("form-name=feedback&" + data as any).toString(),
             });
             if (res.status === 200) {
                 setStatus('ok');
@@ -83,7 +77,6 @@ const FeedbackForm: FC = memo(() =>  {
                   name: '',
                   email: '',
                   message: '',
-                  form: 'feedback',
                 });
             } else {
                 setStatus('error');
@@ -100,11 +93,6 @@ const FeedbackForm: FC = memo(() =>  {
     return (
         // <form className="grid min-h-[320px] grid-cols-1 gap-y-4" data-netlify="true" method="POST" onSubmit={handleFormSubmit}>
         <form className="grid min-h-[320px] grid-cols-1 gap-y-4" name="feedback" onSubmit={handleFormSubmit}>
-            <input 
-                name="form" 
-                type="hidden"
-                value="feedback"
-            />
             <input 
                 className={inputClasses} 
                 id="name"
