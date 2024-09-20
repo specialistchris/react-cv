@@ -14,7 +14,7 @@ export interface FormData {
 
 const FeedbackForm: FC = memo(() =>  {
 
-    const [status, setStatus] = useState<Status>(null);
+    // const [status, setStatus] = useState<Status>(null);
 
     const [error, setError] = useState<string | null>(null);
 
@@ -57,7 +57,7 @@ const FeedbackForm: FC = memo(() =>  {
         event.preventDefault();
         try {
             console.log('Trying with data: ', data);
-            setStatus('pending');
+            // setStatus('pending');
             setError(null);
             // const myForm = event.target as HTMLFormElement;
             // const formData = new FormData(myForm);
@@ -69,7 +69,7 @@ const FeedbackForm: FC = memo(() =>  {
                 body: new URLSearchParams("form-name=feedback&name=" + data.name + "&email= " + data.email + "&message=" + data.message).toString(),
             });
             if (response.ok) {
-                setStatus('ok');
+                // setStatus('ok');
                 const responsedata = await response.json();
                 console.log('Response OK. responsedata: ', responsedata);
                 alert("Form Submitted Successfully");
@@ -128,16 +128,6 @@ const FeedbackForm: FC = memo(() =>  {
                 >
                 Send Message
             </button>
-            {status === 'ok' && (
-                <div className="alert alert-success">
-                    Submitted!
-                </div>
-            )}
-            {status === 'error' && (
-                <div className="alert alert-error">
-                    {error}
-                </div>
-            )}
         </form>
   );
 });
