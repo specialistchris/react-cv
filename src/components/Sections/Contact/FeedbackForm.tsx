@@ -53,24 +53,36 @@ const FeedbackForm: FC = memo(() =>  {
     const handleFormSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         try {
+            console.log('Trying with data: ', data);
             setStatus('pending');
             setError(null);
-            const myForm = event.target as HTMLFormElement;
-            const formData = new FormData(myForm);
+            // const myForm = event.target as HTMLFormElement;
+            // const formData = new FormData(myForm);
+            // const formData = data;
             const res = await fetch('/__forms.html', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                body: new URLSearchParams(formData as any).toString()
+                body: new URLSearchParams(data as any).toString()
             });
             if (res.status === 200) {
                 setStatus('ok');
+                const responsedata = await res.json();
+                console.log('Response OK. responsedata: ', responsedata);
+                alert("Form Submitted Successfully");
+                updateFormValues({
+                  name: '',
+                  email: '',
+                  message: '',
+                });
             } else {
                 setStatus('error');
                 setError(`${res.status} ${res.statusText}`);
+                console.error('Response not OK');
             }
         } catch (e) {
             setStatus('error');
             setError(`${e}`);
+            console.error('Failed to send email:', e);
         }
     };
 
