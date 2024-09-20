@@ -62,8 +62,14 @@ const FeedbackForm: FC = memo(() =>  {
             const res = await fetch('/__forms.html', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                // body: new URLSearchParams("form-name=feedback&" + data as any).toString()
-                body: new URLSearchParams(data as any).toString()
+                // body: new URLSearchParams("form-name: feedback" + data as any).toString()
+                // body: new URLSearchParams(data as any).toString()
+            body: JSON.stringify({
+                reqFormName: "feedback",
+                reqName: data.name,
+                reqEmail: data.email,
+                reqMessage: data.message,
+            }),
             });
             if (res.status === 200) {
                 setStatus('ok');
