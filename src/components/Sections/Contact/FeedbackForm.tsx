@@ -87,7 +87,8 @@ const FeedbackForm: FC = memo(() =>  {
     };
 
     return (
-        <form className="grid min-h-[320px] grid-cols-1 gap-y-4" data-netlify="true" method="POST" onSubmit={handleFormSubmit}>
+        // <form className="grid min-h-[320px] grid-cols-1 gap-y-4" data-netlify="true" method="POST" onSubmit={handleFormSubmit}>
+        <form className="grid min-h-[320px] grid-cols-1 gap-y-4" name="feedback" onSubmit={handleFormSubmit}>
             <input 
                 className={inputClasses} 
                 id="name"
