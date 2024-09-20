@@ -66,7 +66,7 @@ const FeedbackForm: FC = memo(() =>  {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 // body: new URLSearchParams("form-name: feedback" + data as any).toString(),
-                body: new URLSearchParams("form-name=feedback&" + data as any).toString(),
+                body: new URLSearchParams("form-name=feedback&name=" + data.name + "&email= " + data.email + "&message=" + data.message).toString(),
             });
             if (res.status === 200) {
                 setStatus('ok');
