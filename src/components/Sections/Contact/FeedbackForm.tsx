@@ -62,6 +62,7 @@ const FeedbackForm: FC = memo(() =>  {
             const res = await fetch('/__forms.html', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                // body: new URLSearchParams("form-name=feedback&" + data as any).toString()
                 body: new URLSearchParams(data as any).toString()
             });
             if (res.status === 200) {
@@ -89,6 +90,11 @@ const FeedbackForm: FC = memo(() =>  {
     return (
         // <form className="grid min-h-[320px] grid-cols-1 gap-y-4" data-netlify="true" method="POST" onSubmit={handleFormSubmit}>
         <form className="grid min-h-[320px] grid-cols-1 gap-y-4" name="feedback" onSubmit={handleFormSubmit}>
+            <input 
+                name="form-name" 
+                type="hidden"
+                value="feedback"
+            />
             <input 
                 className={inputClasses} 
                 id="name"
