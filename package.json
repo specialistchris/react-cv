@@ -19,6 +19,8 @@
     "autoprefixer": "^10.4.14",
     "classnames": "^2.3.2",
     "country-flag-icons": "^1.5.11",
+    "g": "^2.0.1",
+    "netlify-cli": "^17.36.1",
     "netlify-lambda": "^2.0.16",
     "next": "^13.4.1",
     "nextjs": "^0.0.3",

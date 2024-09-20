@@ -1,4 +1,4 @@
-import type { Handler } from "@netlify/functions";
+import type {Handler} from "@netlify/functions";
 import fetch from "node-fetch";
 
 const handler: Handler = async function(event) {
@@ -62,4 +62,4 @@ const handler: Handler = async function(event) {
   };
 };
 
-export { handler };
+export {handler};
