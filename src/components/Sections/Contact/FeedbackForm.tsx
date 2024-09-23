@@ -70,8 +70,8 @@ const FeedbackForm: FC = memo(() =>  {
             });
             if (response.ok) {
                 // setStatus('ok');
-                const responsedata = await response.json();
-                console.log('Response OK. responsedata: ', responsedata);
+                // const responsedata = await response.json();
+                // console.log('Response OK. responsedata: ', responsedata);
                 alert("Form Submitted Successfully");
                 updateFormValues({
                   name: '',
