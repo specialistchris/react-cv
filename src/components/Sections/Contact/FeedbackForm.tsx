@@ -62,17 +62,16 @@ const FeedbackForm: FC = memo(() =>  {
             // const myForm = event.target as HTMLFormElement;
             // const formData = new FormData(myForm);
             // const formData = data;
-            // const response = 
-            await fetch('/__forms.html', {
+            const response = await fetch('/__forms.html', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 // body: new URLSearchParams("form-name: feedback" + data as any).toString(),
                 body: new URLSearchParams("form-name=feedback&name=" + data.name + "&email= " + data.email + "&message=" + data.message).toString(),
             });
-/*             if (response.ok) {
+            if (response.status == 200) {
                 // setStatus('ok');
                 // const responsedata = await response.json();
-                console.log('Response OK received');
+                console.log('Response 200 received');
                 alert("Form Submitted Successfully");
                 updateFormValues({
                   name: '',
@@ -81,7 +80,7 @@ const FeedbackForm: FC = memo(() =>  {
                 });
             } else {
                 console.error('Response not OK'); 
-            }*/
+            }
         } catch (error) {
             console.error('Failed to send email:', error);
         }
