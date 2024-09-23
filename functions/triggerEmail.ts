@@ -3,6 +3,7 @@ import fetch from "node-fetch";
 
 const handler: Handler = async function(event) {
   
+  console.log('Handler function running with event ', event);
 
   if (event.body === null) {
     console.log('Handler function EMPTY event');
@@ -12,12 +13,10 @@ const handler: Handler = async function(event) {
     };
   }
   
-  console.log('Handler function running with event ', event);
-
   const requestBody = JSON.parse(event.body) as {
-    reqName: string;
-    reqEmail: string;
-    reqMessage: string;
+    name: string;
+    email: string;
+    message: string;
   };
 
   // automatically generated snippet from the email preview
@@ -31,11 +30,11 @@ const handler: Handler = async function(event) {
     body: JSON.stringify({
       to: "hero@christophernapier.com",
       from: "contact@christophernapier.com",
-      subject: `cn.com - new message received from: ${requestBody.reqName}`,
+      subject: `cn.com - new message received from: ${requestBody.name}`,
       parameters: {
-        name: requestBody.reqName, 
-        email: requestBody.reqEmail,
-        message: requestBody.reqMessage,
+        name: requestBody.name, 
+        email: requestBody.email,
+        message: requestBody.message,
       },
     }),
   });
@@ -46,13 +45,13 @@ const handler: Handler = async function(event) {
     },
     method: "POST",
     body: JSON.stringify({
-      to: requestBody.reqEmail,
+      to: requestBody.email,
       from: "contact@christophernapier.com",
       subject: `christophernapier.com - message sent`,
       parameters: {
-        name: requestBody.reqName, 
-        email: requestBody.reqEmail,
-        message: requestBody.reqMessage,
+        name: requestBody.name, 
+        email: requestBody.email,
+        message: requestBody.message,
       },
     }),
   });
