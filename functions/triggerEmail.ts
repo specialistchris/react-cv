@@ -30,7 +30,7 @@ const handler: Handler = async function(event) {
     body: JSON.stringify({
       to: "hero@christophernapier.com",
       from: "contact@christophernapier.com",
-      subject: `cn.com - new message received from: ${requestBody.name}`,
+      subject: `cn.com - new message received from: ${requestBody.name}!`,
       parameters: {
         name: requestBody.name, 
         email: requestBody.email,

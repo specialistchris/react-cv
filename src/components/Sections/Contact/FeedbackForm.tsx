@@ -62,7 +62,7 @@ const FeedbackForm: FC = memo(() =>  {
             // const myForm = event.target as HTMLFormElement;
             // const formData = new FormData(myForm);
             // const formData = data;
-            await fetch('/__forms.html', {
+            const response =  await fetch('/__forms.html', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 // body: new URLSearchParams("form-name: feedback" + data as any).toString(),
@@ -72,7 +72,7 @@ const FeedbackForm: FC = memo(() =>  {
             console.log('Now trying triggerEmail with data: ', data);
             
             // call to my function
-            const response2 = await fetch('./.netlify/functions/triggerEmail', {
+/*             const response2 = await fetch('./.netlify/functions/triggerEmail', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -82,8 +82,9 @@ const FeedbackForm: FC = memo(() =>  {
                   email: data.email,
                   message: data.message,
               }),
-            });
-            if (response2.status == 200) {
+            }); */
+
+            if (response.status == 200) {
                 // setStatus('ok');
                 // const responsedata = await response.json();
                 console.log('Response 200 received');
