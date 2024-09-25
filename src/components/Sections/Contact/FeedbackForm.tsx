@@ -62,13 +62,28 @@ const FeedbackForm: FC = memo(() =>  {
             // const myForm = event.target as HTMLFormElement;
             // const formData = new FormData(myForm);
             // const formData = data;
-            const response = await fetch('/__forms.html', {
+            await fetch('/__forms.html', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 // body: new URLSearchParams("form-name: feedback" + data as any).toString(),
                 body: new URLSearchParams("form-name=feedback&name=" + data.name + "&email= " + data.email + "&message=" + data.message).toString(),
             });
-            if (response.status == 200) {
+
+            console.log('Now trying triggerEmail with data: ', data);
+            
+            // call to my function
+            const response2 = await fetch('./.netlify/functions/triggerEmail', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                  name: data.name,
+                  email: data.email,
+                  message: data.message,
+              }),
+            });
+            if (response2.status == 200) {
                 // setStatus('ok');
                 // const responsedata = await response.json();
                 console.log('Response 200 received');

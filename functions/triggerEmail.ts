@@ -22,7 +22,7 @@ const handler: Handler = async function(event) {
   // automatically generated snippet from the email preview
   // sends a request to an email handler for a subscribed email
   // template name
-  await fetch(`${process.env.URL}/.netlify/functions/emails/contactemail`, {
+/*   await fetch(`${process.env.URL}/.netlify/functions/emails/contactemail`, {
     headers: {
       "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET as string,
     },
@@ -37,7 +37,29 @@ const handler: Handler = async function(event) {
         message: requestBody.message,
       },
     }),
-  });
+  }); */
+
+
+  await fetch(
+    `${process.env.URL}/.netlify/functions/emails/contactemail`,
+    {
+      headers: {
+        "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET as string,
+      },
+      method: "POST",
+      body: JSON.stringify({
+        to: "hero@christophernapier.com",
+        from: "contact@christophernapier.com",
+        subject: `cn.com - new message received from: ${requestBody.name}`,
+        parameters: {
+          name: requestBody.name, 
+          email: requestBody.email,
+          message: requestBody.message,
+        },
+      }),
+    }
+  );
+
 
   await fetch(`${process.env.URL}/.netlify/functions/emails/confirmemail`, {
     headers: {
@@ -55,6 +77,26 @@ const handler: Handler = async function(event) {
       },
     }),
   });
+
+/*   await fetch(
+    `${process.env.URL}/.netlify/functions/emails/contactemail`,
+    {
+      headers: {
+        "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,
+      },
+      method: "POST",
+      body: JSON.stringify({
+        to: requestBody.email,
+        from: "contact@christophernapier.com",
+        subject: `christophernapier.com - message sent`,
+        parameters: {
+          name: requestBody.name, 
+          email: requestBody.email,
+          message: requestBody.message,
+        },
+      }),
+    }
+  ); */
 
   return {
     statusCode: 200,
