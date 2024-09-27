@@ -29,6 +29,7 @@
     "react-dom": "^18.2.0",
     "react-flag-kit": "^1.1.1",
     "react-router-dom": "^6.15.0",
+    "sharp": "^0.33.5",
     "ts-pattern": "^4.2.2",
     "yarn": "^1.22.19"
   },
