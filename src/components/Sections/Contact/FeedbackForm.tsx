@@ -72,7 +72,7 @@ const FeedbackForm: FC = memo(() =>  {
             console.log('Now trying triggerEmail with data: ', data);
             
             // call to my function
-/*             const response2 = await fetch('./.netlify/functions/triggerEmail', {
+            const response2 = await fetch('./.netlify/functions/triggerEmail', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -82,17 +82,18 @@ const FeedbackForm: FC = memo(() =>  {
                   email: data.email,
                   message: data.message,
               }),
-            }); */
+            });
+
+            console.log('Response2 200 status: ', response2.status);
+
 
             if (response.status == 200) {
-                // setStatus('ok');
-                // const responsedata = await response.json();
-                console.log('Response 200 received');
-                alert("Form Submitted Successfully");
+                console.log('Response2 200 received');
+                // alert("Form Submitted Successfully");
                 updateFormValues({
-                  name: '',
-                  email: '',
-                  message: '',
+                    name: '',
+                    email: '',
+                    message: '',
                 });
             } else {
                 console.error('Response not OK'); 
@@ -106,6 +107,7 @@ const FeedbackForm: FC = memo(() =>  {
         // <form className="grid min-h-[320px] grid-cols-1 gap-y-4" data-netlify="true" method="POST" onSubmit={handleFormSubmit}>
         <form className="grid min-h-[320px] grid-cols-1 gap-y-4" name="feedback" onSubmit={handleFormSubmit}>
             <input 
+                autoComplete='given-name'
                 className={inputClasses} 
                 id="name"
                 name="name" 
