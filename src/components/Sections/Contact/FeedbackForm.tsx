@@ -72,7 +72,7 @@ const FeedbackForm: FC = memo(() =>  {
             console.log('Now trying triggerEmail with data: ', data);
             
             // call to my function
-            const response2 = await fetch('./.netlify/functions/triggerEmail', {
+            const triggerResponse = await fetch('./.netlify/functions/triggerEmail', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -84,12 +84,12 @@ const FeedbackForm: FC = memo(() =>  {
               }),
             });
 
-            console.log('Response2 200 status: ', response2.status);
+            console.log('triggerResponse status: ', triggerResponse.status);
 
 
             if (response.status == 200) {
-                console.log('Response2 200 received');
-                // alert("Form Submitted Successfully");
+                console.log('Response 200 received');
+                alert("Form Submitted Successfully");
                 updateFormValues({
                     name: '',
                     email: '',
