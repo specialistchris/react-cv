@@ -45,9 +45,9 @@ const handler: Handler = async function(event) {
   );
 
 
-  if (contactResponse.status == 200){
+/*   if (contactResponse.status == 200){
     alert("Contact Submitted Successfully");
-  }
+  } */
 
   const confirmResponse = await fetch(`${process.env.URL}/.netlify/functions/emails/confirmemail`, {
     headers: {
@@ -66,9 +66,9 @@ const handler: Handler = async function(event) {
     }),
   });
 
-  if (confirmResponse.status == 200){
+/*   if (confirmResponse.status == 200){
     alert("Confirm Submitted Successfully");
-  }
+  } */
 
   return {
     statusCode: 200,
