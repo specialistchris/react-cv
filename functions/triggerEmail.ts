@@ -46,9 +46,9 @@ const handler: Handler = async function(event) {
 
 
   if (contactResponse.status == 200){
-    alert("Form Submitted Successfully");
+    alert("Contact Submitted Successfully");
   }
-  
+
   const confirmResponse = await fetch(`${process.env.URL}/.netlify/functions/emails/confirmemail`, {
     headers: {
       "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET as string,
@@ -67,7 +67,7 @@ const handler: Handler = async function(event) {
   });
 
   if (confirmResponse.status == 200){
-    alert("Form Submitted Successfully");
+    alert("Confirm Submitted Successfully");
   }
 
   return {
