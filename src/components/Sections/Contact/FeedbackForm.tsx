@@ -183,12 +183,11 @@ const FeedbackForm: FC = memo(() =>  {
                 rows={6}
                 value={formValues.message}
             />
-            <div className="rounded-md bg-neutral-700 p-2">
+            <div className="rounded-md bg-neutral-700 p-2 text-neutral-100">
                 <altcha-widget
                     challengeurl="/.netlify/functions/altchaChallenge"
                     name="altcha"
                     ref={altchaWidgetRef}
-                    style={{'--altcha-color-text': '#f5f5f5'} as React.CSSProperties}
                 />
             </div>
             <button
