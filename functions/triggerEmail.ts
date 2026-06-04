@@ -1,6 +1,7 @@
 import type {Handler} from "@netlify/functions";
 import fetch from "node-fetch";
-import {verifySolution} from "altcha-lib";
+import {deriveHmacKeySecret, verifySolution} from "altcha-lib";
+import {deriveKey} from "altcha-lib/algorithms/pbkdf2";
 
 const handler: Handler = async function(event) {
   if (event.httpMethod !== "POST") {
@@ -48,7 +49,13 @@ const handler: Handler = async function(event) {
     };
   }
 
-  const verified = await verifySolution(requestBody.altcha, secret);
+  const verified = await verifySolution({
+    payload: requestBody.altcha,
+    deriveKey,
+    expires: true,
+    hmacKeySignatureSecret: await deriveHmacKeySecret(secret),
+    hmacSignatureSecret: secret,
+  });
 
   if (!verified) {
     return {
