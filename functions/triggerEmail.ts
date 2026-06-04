@@ -1,15 +1,29 @@
 import type {Handler} from "@netlify/functions";
 import fetch from "node-fetch";
+import {verifySolution} from "altcha-lib";
 
 const handler: Handler = async function(event) {
-  
-  console.log('Handler function running with event ', event);
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({error: "Method not allowed"}),
+    };
+  }
 
   if (event.body === null) {
     console.log('Handler function EMPTY event');
     return {
       statusCode: 400,
-      body: JSON.stringify("Payload required"),
+      body: JSON.stringify({error: "Payload required"}),
+    };
+  }
+
+  const secret = process.env.ALTCHA_SECRET;
+
+  if (!secret) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({error: "ALTCHA_SECRET is not configured"}),
     };
   }
   
@@ -17,12 +31,35 @@ const handler: Handler = async function(event) {
     name: string;
     email: string;
     message: string;
+    altcha?: string;
   };
+
+  if (!requestBody.name || !requestBody.email || !requestBody.message) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({error: "Name, email, and message are required"}),
+    };
+  }
+
+  if (!requestBody.altcha) {
+    return {
+      statusCode: 403,
+      body: JSON.stringify({error: "Human verification required"}),
+    };
+  }
+
+  const verified = await verifySolution(requestBody.altcha, secret);
+
+  if (!verified) {
+    return {
+      statusCode: 403,
+      body: JSON.stringify({error: "Human verification failed"}),
+    };
+  }
 
   // automatically generated snippet copied from the email preview
   // sends a request to an email handler for a subscribed email
   // template name
-
 
   const contactResponse = await fetch(
     `${process.env.URL}/.netlify/functions/emails/contactemail`,
@@ -44,11 +81,6 @@ const handler: Handler = async function(event) {
     }
   );
 
-
-/*   if (contactResponse.status == 200){
-    alert("Contact Submitted Successfully");
-  } */
-
   const confirmResponse = await fetch(`${process.env.URL}/.netlify/functions/emails/confirmemail`, {
     headers: {
       "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET as string,
@@ -66,17 +98,22 @@ const handler: Handler = async function(event) {
     }),
   });
 
-/*   if (confirmResponse.status == 200){
-    alert("Confirm Submitted Successfully");
-  } */
+  if (!contactResponse.ok || !confirmResponse.ok) {
+    return {
+      statusCode: 502,
+      body: JSON.stringify({
+        error: "Email delivery failed",
+        contactStatus: contactResponse.status,
+        confirmStatus: confirmResponse.status,
+      }),
+    };
+  }
 
   return {
     statusCode: 200,
     body: JSON.stringify({
       text: "Contact email sent!",
-      requestBody,
-    }
-    ),
+    }),
   };
 };
 
