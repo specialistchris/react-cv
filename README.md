@@ -1,32 +1,29 @@
-# React JS Resume Website Template
+# react-cv
 
-![ReactJS Resume Website Template](resume-screenshot.jpg?raw=true 'ReactJS Resume Website Template')
+`react-cv` is the live source repository for [christophernapier.com](https://www.christophernapier.com/).
 
-<div align="center">
+It is a React-based personal CV and professional profile website for Chris Napier. The site is built with TypeScript on the Next.js framework, styled with Tailwind CSS, and populated from structured data in the application source.
 
-<img alt="GitHub release (latest by date including pre-releases" src="https://img.shields.io/github/v/release/tbakerx/react-resume-template?include_prereleases">
+## Repository relationship
 
-<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/tbakerx/react-resume-template?style=flat">
+- `react-cv` is the live site.
+- `cncom` is a backup of the site prior to AI support.
 
-<img alt="GitHub Repo forks" src="https://img.shields.io/github/forks/tbakerx/react-resume-template?style=flat&color=success">
+## Purpose
 
-<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/tbakerx/react-resume-template?style=flat&color=yellow">
+The website acts as a personal brand platform and interactive CV. It is intended to present Chris's professional background, skills, education, experience, interests, and contact options in a clear and modern web format.
 
-<img alt="GitHub package.json dependency version (prod)" src="https://img.shields.io/github/package-json/dependency-version/tbakerx/react-resume-template/react?style=flat">
+## Technology stack
 
-<img alt="Github Repo Sponsors" src="https://img.shields.io/github/sponsors/tbakerx?style=flat&color=blueviolet">
+- React
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Netlify
 
-## React based template for software developer-focused resume websites
+## Current TODO
 
-</div>
-
-
-### 🎉 TODO
-* fix language icons
-* add cp page
-* about me update
-
-
-## Description
-
-This is a React based personal resume website. Built with typescript on the Next.js framework, styled with Tailwind css, and populated with data from a single file. The site is fully mobile-optimized and server-side rendered to ensure fast loading and a clean UI on any device.
+- Fix language icons.
+- Add CP page.
+- Update About Me content.
+- Continue improving the site based on `BACKLOG.md`.
