@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, {FC, FormEvent, memo, useCallback, useMemo, useState} from 'react';
+import React, {FC, FormEvent, memo, useCallback, useEffect, useMemo, useRef, useState} from 'react';
 
 // Define the Status type
 // type Status = 'pending' | 'ok' | 'error' | null;
@@ -9,6 +9,7 @@ export interface FormData {
     name: string;
     email: string;
     message: string;
+    altcha: string;
   };
 
 
@@ -27,19 +28,51 @@ const FeedbackForm: FC = memo(() =>  {
         //form-name: 'feedback',
         name: '',
         email: '',
-        message: ''
+        message: '',
+        altcha: '',
         }),
         [],
     );
     
     const [data, setData] = useState<FormData>(defaultData);
+    const [isHumanVerified, setIsHumanVerified] = useState(false);
+    const altchaWidgetRef = useRef<HTMLElement | null>(null);
     
     const [formValues, updateFormValues] = useState<FormData>({
         //form-name: "feedback",
         name: "",
         email: "",
-        message: ""
+        message: "",
+        altcha: "",
     });
+
+    useEffect(() => {
+        import('altcha');
+    }, []);
+
+    useEffect(() => {
+        const widget = altchaWidgetRef.current;
+
+        if (!widget) {
+            return;
+        }
+
+        const handleStateChange = (event: Event) => {
+            const customEvent = event as CustomEvent<{payload?: string; state?: string}>;
+            const payload = customEvent.detail?.payload ?? '';
+            const state = customEvent.detail?.state;
+
+            updateFormValues(formValues => ({...formValues, altcha: payload}));
+            setData(data => ({...data, altcha: payload}));
+            setIsHumanVerified(state === 'verified' && Boolean(payload));
+        };
+
+        widget.addEventListener('statechange', handleStateChange);
+
+        return () => {
+            widget.removeEventListener('statechange', handleStateChange);
+        };
+    }, []);
 
     const onChange = useCallback(
         <T extends HTMLInputElement | HTMLTextAreaElement>(event: React.ChangeEvent<T>): void => {
@@ -57,6 +90,12 @@ const FeedbackForm: FC = memo(() =>  {
         event.preventDefault();
         try {
             console.log('Handle for submit with data: ', data);
+
+            if (!isHumanVerified || !data.altcha) {
+                alert('Please complete the human verification check before sending your message.');
+                return;
+            }
+
             // setStatus('pending');
             // setError(null);
             // const myForm = event.target as HTMLFormElement;
@@ -81,22 +120,27 @@ const FeedbackForm: FC = memo(() =>  {
                   name: data.name,
                   email: data.email,
                   message: data.message,
+                  altcha: data.altcha,
               }),
             });
 
             console.log('triggerResponse status: ', triggerResponse.status);
 
 
-            if (response.status == 200) {
+            if (response.status == 200 && triggerResponse.status == 200) {
                 console.log('Response 200 received');
                 alert("Form Submitted Successfully");
                 updateFormValues({
                     name: '',
                     email: '',
                     message: '',
+                    altcha: '',
                 });
+                setData(defaultData);
+                setIsHumanVerified(false);
             } else {
                 console.error('Response not OK'); 
+                alert('Your message could not be sent. Please try again.');
             }
         } catch (error) {
             console.error('Failed to send email:', error);
@@ -139,9 +183,17 @@ const FeedbackForm: FC = memo(() =>  {
                 rows={6}
                 value={formValues.message}
             />
+            <div className="rounded-md bg-neutral-700 p-2">
+                <altcha-widget
+                    challenge="/.netlify/functions/altchaChallenge"
+                    name="altcha"
+                    ref={altchaWidgetRef}
+                />
+            </div>
             <button
                 aria-label="Submit contact form"
-                className="w-max rounded-full border-2 border-orange-600 bg-stone-900 px-4 py-2 text-sm font-medium text-white shadow-md outline-none hover:bg-stone-800 focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800"
+                className="w-max rounded-full border-2 border-orange-600 bg-stone-900 px-4 py-2 text-sm font-medium text-white shadow-md outline-none hover:bg-stone-800 focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800 disabled:cursor-not-allowed disabled:opacity-60"
+                disabled={!isHumanVerified}
                 type="submit"
                 >
                 Send Message
