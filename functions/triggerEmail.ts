@@ -1,7 +1,61 @@
 import type {Handler} from "@netlify/functions";
 import fetch from "node-fetch";
-import {deriveHmacKeySecret, verifySolution} from "altcha-lib";
-import {deriveKey} from "altcha-lib/algorithms/pbkdf2";
+import {createHmac, createHash, timingSafeEqual} from "crypto";
+
+type AltchaPayload = {
+  algorithm?: string;
+  challenge?: string;
+  number?: number;
+  salt?: string;
+  signature?: string;
+};
+
+const sha256Hex = (value: string): string => createHash("sha256").update(value).digest("hex");
+
+const hmacSha256Hex = (value: string, secret: string): string =>
+  createHmac("sha256", secret).update(value).digest("hex");
+
+const safeCompare = (a: string, b: string): boolean => {
+  const aBuffer = Buffer.from(a, "hex");
+  const bBuffer = Buffer.from(b, "hex");
+
+  if (aBuffer.length !== bBuffer.length) {
+    return false;
+  }
+
+  return timingSafeEqual(aBuffer, bBuffer);
+};
+
+const parseAltchaPayload = (payload: string): AltchaPayload | null => {
+  try {
+    return JSON.parse(Buffer.from(payload, "base64").toString("utf8")) as AltchaPayload;
+  } catch (error) {
+    console.error("ALTCHA payload parsing failed:", error);
+    return null;
+  }
+};
+
+const verifyAltchaPayload = (payload: string, secret: string): boolean => {
+  const altcha = parseAltchaPayload(payload);
+
+  if (!altcha?.challenge || typeof altcha.number !== "number" || !altcha.salt || !altcha.signature) {
+    return false;
+  }
+
+  if (altcha.algorithm !== "SHA-256") {
+    return false;
+  }
+
+  const expectedChallenge = sha256Hex(`${altcha.salt}${altcha.number}`);
+
+  if (!safeCompare(expectedChallenge, altcha.challenge)) {
+    return false;
+  }
+
+  const expectedSignature = hmacSha256Hex(altcha.challenge, secret);
+
+  return safeCompare(expectedSignature, altcha.signature);
+};
 
 const handler: Handler = async function(event) {
   if (event.httpMethod !== "POST") {
@@ -49,13 +103,7 @@ const handler: Handler = async function(event) {
     };
   }
 
-  const verified = await verifySolution({
-    payload: requestBody.altcha,
-    deriveKey,
-    expires: true,
-    hmacKeySignatureSecret: await deriveHmacKeySecret(secret),
-    hmacSignatureSecret: secret,
-  });
+  const verified = verifyAltchaPayload(requestBody.altcha, secret);
 
   if (!verified) {
     return {
