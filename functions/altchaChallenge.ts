@@ -1,5 +1,5 @@
 import type {Handler} from '@netlify/functions';
-import {createChallenge} from 'altcha-lib/v1';
+import {createChallenge} from 'altcha-lib';
 
 const handler: Handler = async () => {
   const secret = process.env.ALTCHA_SECRET;
@@ -14,7 +14,6 @@ const handler: Handler = async () => {
   try {
     const challenge = await createChallenge({
       hmacKey: secret,
-      maxNumber: 50000,
     });
 
     return {
