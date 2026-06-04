@@ -185,7 +185,7 @@ const FeedbackForm: FC = memo(() =>  {
             />
             <div className="rounded-md bg-neutral-700 p-2">
                 <altcha-widget
-                    challenge="/.netlify/functions/altchaChallenge"
+                    challengeurl="/.netlify/functions/altchaChallenge"
                     name="altcha"
                     ref={altchaWidgetRef}
                 />
