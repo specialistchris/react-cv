@@ -188,6 +188,7 @@ const FeedbackForm: FC = memo(() =>  {
                     challengeurl="/.netlify/functions/altchaChallenge"
                     name="altcha"
                     ref={altchaWidgetRef}
+                    style={{'--altcha-color-text': '#f5f5f5'} as React.CSSProperties}
                 />
             </div>
             <button
