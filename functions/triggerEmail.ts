@@ -1,6 +1,6 @@
 import type {Handler} from "@netlify/functions";
 import fetch from "node-fetch";
-import {verifySolution} from "altcha-lib";
+import {verifySolution} from "altcha-lib/v1";
 
 const handler: Handler = async function(event) {
   if (event.httpMethod !== "POST") {
