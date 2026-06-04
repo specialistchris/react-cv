@@ -1,5 +1,6 @@
 import type {Handler} from '@netlify/functions';
-import {createChallenge} from 'altcha-lib';
+import {createChallenge, deriveHmacKeySecret, randomInt} from 'altcha-lib';
+import {deriveKey} from 'altcha-lib/algorithms/pbkdf2';
 
 const handler: Handler = async () => {
   const secret = process.env.ALTCHA_SECRET;
@@ -13,7 +14,13 @@ const handler: Handler = async () => {
 
   try {
     const challenge = await createChallenge({
-      hmacKey: secret,
+      algorithm: 'PBKDF2/SHA-256',
+      cost: 5000,
+      counter: randomInt(10000, 5000),
+      deriveKey,
+      expiresAt: new Date(Date.now() + 10 * 60 * 1000),
+      hmacKeySignatureSecret: await deriveHmacKeySecret(secret),
+      hmacSignatureSecret: secret,
     });
 
     return {
