@@ -1,5 +1,5 @@
 {
-  "name": "react-resume-template",
+  "name": "react-cv",
   "version": "2.0.0",
   "private": true,
   "scripts": {
@@ -76,9 +76,19 @@
   "resolutions": {
     "autoprefixer": "10.4.5"
   },
-  "description": "![ReactJS Resume Website Template](resume-screenshot.jpg?raw=true 'ReactJS Resume Website Template')",
+  "description": "Live personal CV and professional profile website for Chris Napier, built with React, Next.js, TypeScript, Tailwind CSS, and Netlify.",
   "main": "next-sitemap.js",
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "personal-website",
+    "cv",
+    "resume",
+    "portfolio",
+    "react",
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "netlify"
+  ],
+  "author": "Chris",
   "license": "ISC"
 }
